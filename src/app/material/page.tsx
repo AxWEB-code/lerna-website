@@ -234,7 +234,7 @@ export default function Materials() {
   );
 }
 
-const MaterialCard = ({ material, index }) => {
+const MaterialCard = ({ material, index }: any) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
