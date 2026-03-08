@@ -390,7 +390,7 @@ const VideoCard = ({ video, index }: any) => {
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {video.tags.map((tag, idx) => (
+            {video.tags.map((tag: any, idx: number) => (
               <span
                 key={idx}
                 className="px-2 py-1 bg-white/5 rounded-lg text-xs text-gray-400"
