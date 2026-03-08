@@ -20,7 +20,7 @@ export default function Navbar() {
     const handleScroll = () => {
       const scrollY = window.scrollY
 
-      sections.forEach((section) => {
+      sections.forEach((section: any) => {
         const sectionTop = section.offsetTop - 100
         const sectionHeight = section.clientHeight
         const sectionId = section.getAttribute("id")
