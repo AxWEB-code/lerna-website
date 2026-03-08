@@ -152,7 +152,7 @@ export default function Modules() {
   );
 }
 
-const ModuleCard = ({ module, index }) => {
+const ModuleCard = ({ module, index }: any) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
