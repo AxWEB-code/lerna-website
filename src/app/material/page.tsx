@@ -304,7 +304,7 @@ const MaterialCard = ({ material, index }: any) => {
 
           {/* Features */}
           <div className="grid grid-cols-2 gap-2 mb-4">
-            {material.features.map((feature, idx) => (
+            {material.features.map((feature: any, idx: number) => (
               <div
                 key={idx}
                 className="flex items-center gap-1.5 text-xs text-gray-300"
