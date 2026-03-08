@@ -310,7 +310,7 @@ export default function VideoLessons() {
   );
 }
 
-const VideoCard = ({ video, index }) => {
+const VideoCard = ({ video, index }: any) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
