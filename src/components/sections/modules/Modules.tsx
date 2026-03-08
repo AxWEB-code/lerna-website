@@ -200,7 +200,7 @@ const ModuleCard = ({ module, index }: any) => {
 
         {/* Features - 2-column grid - will take remaining space if needed */}
         <div className="grid grid-cols-2 gap-2 mt-auto">
-          {module.features.map((feature, idx) => (
+          {module.features.map((feature: any, idx: number) => (
             <div
               key={idx}
               className="flex items-center gap-1.5 text-xs text-gray-300"
