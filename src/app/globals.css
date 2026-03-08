@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #0f1117;
+}
+
+.hero-grid {
+  background-image: radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+  );
+  background-size: 40px 40px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-card {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text {
+  animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes floatSlow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating-icon {
+  position: absolute;
+  opacity: 0.08;
+  animation: floatSlow 12s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  50% {
+    transform: translateX(40px) translateY(-30px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+.floating-icon {
+  position: absolute;
+  opacity: 0.06;
+  animation: drift 18s ease-in-out infinite;
+}
+
+@keyframes pulseSoft {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #22c55e;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+.feature-card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  padding: 24px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: #22c55e;
+}
+
+.feature-card {
+  background: rgba(17, 24, 39, 0.45);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 28px;
+  border-radius: 18px;
+  transition: all 0.35s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(34,197,94,0.6);
+  box-shadow: 0 10px 35px rgba(34,197,94,0.15);
+}
+
+
+.step-card {
+  background: rgba(17,24,39,0.45);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.step-card h3 {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.step-card p {
+  color: #9ca3af;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.step-number {
+  font-size: 12px;
+  font-weight: 600;
+  color: #22c55e;
+  letter-spacing: 1px;
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+  border-color: #22c55e;
+}
+
+
+.float-illustration {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+.resource-card {
+  background: rgba(17,24,39,0.45);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-6px);
+  border-color: #22c55e;
+}
+
+.resource-thumb {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #22c55e;
+}
+
+.resource-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.resource-text {
+  color: #9ca3af;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.resource-btn {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #22c55e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
