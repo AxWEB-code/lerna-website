@@ -30,41 +30,41 @@ export default function Hero() {
         {/* LEFT TEXT */}
         <div className="hero-text">
 
-          {/* Premium badge with subtle gradient - REDUCED SIZE */}
-          <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#3B71E8]/20">
-            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"></span>
-            <span className="text-xs font-medium bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
+          {/* Premium badge with subtle gradient - INCREASED SIZE */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 backdrop-blur-sm px-4 py-2 rounded-full border border-[#3B71E8]/20">
+            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"></span>
+            <span className="text-sm font-semibold bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
               Smart School Infrastructure
             </span>
           </div>
 
-          {/* HEADLINE - REDUCED SIZE */}
-          <h1 className="text-3xl md:text-6xl font-bold tracking-tight mt-6 leading-[1.1]">
+          {/* HEADLINE - INCREASED SIZE AND BOLDNESS */}
+          <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight mt-6 leading-[1.1]">
             <span className="text-[#1F1F1F]">The Operating System</span>
             <br />
-            <span className="bg-gradient-to-r from-[#3B71E8] via-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3B71E8] via-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent font-black">
               for Modern Schools
             </span>
           </h1>
 
-          {/* DESCRIPTION - REDUCED SIZE */}
-          <p className="text-gray-600 mt-4 text-base max-w-lg leading-relaxed">
+          {/* DESCRIPTION - INCREASED SIZE AND WEIGHT */}
+          <p className="text-gray-700 mt-4 text-lg max-w-lg leading-relaxed font-medium">
             Lerna helps schools manage academics, finance,
             communication and digital learning resources
             in one powerful platform.
           </p>
 
-          {/* BUTTONS - REDUCED SIZE */}
-          <div className="flex gap-3 mt-6">
+          {/* BUTTONS - INCREASED SIZE */}
+          <div className="flex gap-4 mt-6">
 
             {/* Primary CTA - Blue gradient */}
-            <button className="group relative px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] hover:from-[#3B71E8] hover:to-[#F28C28] text-white font-semibold text-sm transition-all duration-500 shadow-lg shadow-[#3B71E8]/25 hover:shadow-xl hover:shadow-[#F28C28]/25 transform hover:-translate-y-0.5">
+            <button className="group relative px-7 py-3 rounded-lg bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] hover:from-[#3B71E8] hover:to-[#F28C28] text-white font-bold text-base transition-all duration-500 shadow-lg shadow-[#3B71E8]/25 hover:shadow-xl hover:shadow-[#F28C28]/25 transform hover:-translate-y-0.5">
               <span className="relative z-10">Get Started</span>
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#F28C28] to-[#3B71E8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </button>
 
             {/* Secondary CTA - Elegant outline */}
-            <button className="px-6 py-2.5 rounded-lg border-2 border-gray-200 text-[#1F1F1F] font-semibold text-sm hover:border-[#3B71E8] hover:bg-blue-50/50 transition-all duration-300">
+            <button className="px-7 py-3 rounded-lg border-2 border-gray-200 text-[#1F1F1F] font-bold text-base hover:border-[#3B71E8] hover:bg-blue-50/50 transition-all duration-300">
               Explore Resources
             </button>
 
@@ -90,9 +90,9 @@ export default function Hero() {
           <div className="hidden md:block absolute -left-16 top-20 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-xl p-4 w-48 float-card hover:shadow-2xl transition-all duration-300">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3B71E8] to-[#3B71E8] flex items-center justify-center text-white">📊</div>
-              <span className="font-medium text-[#1F1F1F]">Performance</span>
+              <span className="font-semibold text-[#1F1F1F]">Performance</span>
             </div>
-            <p className="text-2xl font-bold text-[#1F1F1F]">92%</p>
+            <p className="text-2xl font-extrabold text-[#1F1F1F]">92%</p>
             <p className="text-xs text-gray-500">Average score</p>
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] rounded-full"></div>
           </div>
@@ -100,9 +100,9 @@ export default function Hero() {
           <div className="hidden md:block absolute -right-16 top-28 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-xl p-4 w-48 float-card hover:shadow-2xl transition-all duration-300">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#F28C28] to-[#F28C28] flex items-center justify-center text-white">💰</div>
-              <span className="font-medium text-[#1F1F1F]">Fees</span>
+              <span className="font-semibold text-[#1F1F1F]">Fees</span>
             </div>
-            <p className="text-2xl font-bold text-[#1F1F1F]">₦4.2M</p>
+            <p className="text-2xl font-extrabold text-[#1F1F1F]">₦4.2M</p>
             <p className="text-xs text-gray-500">Collected this term</p>
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#F28C28] to-[#F28C28] rounded-full"></div>
           </div>
@@ -110,9 +110,9 @@ export default function Hero() {
           <div className="hidden md:block absolute left-2 -bottom-4 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-xl p-4 w-48 float-card hover:shadow-2xl transition-all duration-300">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3B71E8] to-[#F28C28] flex items-center justify-center text-white">👥</div>
-              <span className="font-medium text-[#1F1F1F]">Parents</span>
+              <span className="font-semibold text-[#1F1F1F]">Parents</span>
             </div>
-            <p className="text-2xl font-bold text-[#1F1F1F]">312</p>
+            <p className="text-2xl font-extrabold text-[#1F1F1F]">312</p>
             <p className="text-xs text-gray-500">Active on portal</p>
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#3B71E8] to-[#F28C28] rounded-full"></div>
           </div>
@@ -120,9 +120,9 @@ export default function Hero() {
           <div className="hidden md:block absolute right-6 -bottom-2 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-xl p-4 w-48 float-card hover:shadow-2xl transition-all duration-300">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#F28C28] to-[#3B71E8] flex items-center justify-center text-white">✅</div>
-              <span className="font-medium text-[#1F1F1F]">Attendance</span>
+              <span className="font-semibold text-[#1F1F1F]">Attendance</span>
             </div>
-            <p className="text-2xl font-bold text-[#1F1F1F]">96%</p>
+            <p className="text-2xl font-extrabold text-[#1F1F1F]">96%</p>
             <p className="text-xs text-gray-500">Today</p>
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#F28C28] to-[#3B71E8] rounded-full"></div>
           </div>
