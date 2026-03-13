@@ -1,58 +1,76 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-white text-[#1F1F1F] overflow-hidden hero-grid animated-bg">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-white via-white to-blue-50/30 overflow-hidden">
 
-      {/* moving background icons - subtle blue */}
-      <div className="floating-icon text-5xl top-24 left-20 opacity-10 text-[#3B71E8]">🎓</div>
-      <div className="floating-icon text-4xl bottom-32 right-20 opacity-10 text-[#3B71E8]">📚</div>
-      <div className="floating-icon text-4xl top-1/2 left-10 opacity-10 text-[#3B71E8]">📊</div>
-      <div className="floating-icon text-4xl bottom-10 right-1/3 opacity-10 text-[#3B71E8]">🏫</div>
+      {/* Premium animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Large gradient orbs */}
+        <div className="absolute top-20 left-20 w-[500px] h-[500px] bg-gradient-to-r from-[#3B71E8]/5 to-transparent rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-20 right-20 w-[600px] h-[600px] bg-gradient-to-l from-[#F28C28]/5 to-transparent rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#3B71E8]/3 via-transparent to-[#F28C28]/3 rounded-full blur-[120px]"></div>
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h60v60H0z" fill="none"/%3E%3Cpath d="M0 0h60M0 60h60M0 0v60M60 0v60" stroke="%233B71E8" stroke-width="0.5" stroke-opacity="0.05"/%3E%3C/svg%3E')] opacity-30"></div>
+      </div>
 
-      <div className="floating-icon text-3xl top-10 right-1/4 opacity-10 text-[#3B71E8]">📚</div>
-      <div className="floating-icon text-3xl bottom-40 left-1/4 opacity-10 text-[#3B71E8]">🎓</div>
-      <div className="floating-icon text-3xl top-1/3 right-10 opacity-10 text-[#3B71E8]">📊</div>
-      <div className="floating-icon text-3xl bottom-16 left-16 opacity-10 text-[#3B71E8]">🏫</div>
+      {/* Floating icons with gradient */}
+      <div className="floating-icon text-5xl top-24 left-20 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-30">🎓</div>
+      <div className="floating-icon text-4xl bottom-32 right-20 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-30">📚</div>
+      <div className="floating-icon text-4xl top-1/2 left-10 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-30">📊</div>
+      <div className="floating-icon text-4xl bottom-10 right-1/3 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-30">🏫</div>
 
-      {/* blue glow background - primary */}
-      <div className="absolute top-40 right-40 w-[480px] h-[480px] bg-[#3B71E8] blur-[180px] opacity-10"></div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
 
         {/* LEFT TEXT */}
         <div className="hero-text">
 
-          {/* Primary: Blue badge */}
-          <span className="bg-[#3B71E8] text-white px-3 py-1 rounded-full text-xs font-medium">
-            Smart School Infrastructure
-          </span>
+          {/* Premium badge with subtle gradient */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 backdrop-blur-sm px-4 py-2 rounded-full border border-[#3B71E8]/20">
+            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"></span>
+            <span className="text-sm font-medium bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
+              Smart School Infrastructure
+            </span>
+          </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mt-6 leading-tight text-[#1F1F1F]">
-            The Operating System
+          <h1 className="text-4xl md:text-7xl font-bold tracking-tight mt-8 leading-[1.1]">
+            <span className="text-[#1F1F1F]">The Operating System</span>
             <br />
-            {/* Primary: Blue gradient with white */}
-            <span className="bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3B71E8] via-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
               for Modern Schools
             </span>
           </h1>
 
-          <p className="text-gray-600 mt-5 text-base max-w-lg">
+          <p className="text-gray-600 mt-6 text-lg max-w-lg leading-relaxed">
             Lerna helps schools manage academics, finance,
             communication and digital learning resources
             in one powerful platform.
           </p>
 
-          <div className="flex gap-4 mt-7">
+          <div className="flex gap-4 mt-8">
 
-            {/* Primary: Blue button */}
-            <button className="px-5 py-2.5 rounded-lg bg-[#3B71E8] text-white font-semibold hover:bg-[#2E5ACE] transition-colors shadow-md hover:shadow-lg">
-              Get Started
+            {/* Primary CTA - Blue gradient */}
+            <button className="group relative px-8 py-3 rounded-lg bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] hover:from-[#3B71E8] hover:to-[#F28C28] text-white font-semibold transition-all duration-500 shadow-lg shadow-[#3B71E8]/25 hover:shadow-xl hover:shadow-[#F28C28]/25 transform hover:-translate-y-0.5">
+              <span className="relative z-10">Get Started</span>
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#F28C28] to-[#3B71E8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </button>
 
-            {/* Secondary: White button with blue border */}
-            <button className="px-5 py-2.5 border-2 border-[#3B71E8] text-[#3B71E8] rounded-lg bg-white hover:bg-blue-50 transition-colors font-medium">
+            {/* Secondary CTA - Elegant outline */}
+            <button className="px-8 py-3 rounded-lg border-2 border-gray-200 text-[#1F1F1F] font-semibold hover:border-[#3B71E8] hover:bg-blue-50/50 transition-all duration-300">
               Explore Resources
             </button>
 
+          </div>
+
+          {/* Trust indicators */}
+          <div className="flex items-center gap-6 mt-10 pt-6 border-t border-gray-100">
+            <div className="flex -space-x-2">
+              {[1,2,3,4].map((i) => (
+                <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-[#3B71E8] to-[#F28C28] opacity-60 border-2 border-white"></div>
+              ))}
+            </div>
+            <p className="text-sm text-gray-500">
+              <span className="font-semibold text-[#1F1F1F]">500+</span> schools trusted
+            </p>
           </div>
 
         </div>
@@ -60,77 +78,56 @@ export default function Hero() {
         {/* RIGHT HERO VISUAL */}
         <div className="relative">
 
-          {/* dashboard card - white with blue accent */}
-          <div className="relative transform md:rotate-[-5deg] rounded-2xl border-2 border-[#3B71E8]/20 bg-white shadow-2xl shadow-[#3B71E8]/10">
-
-            <img
-              src="/dashboard-preview.png"
-              alt="dashboard"
-              className="rounded-2xl w-full h-auto"
-            />
-
-            {/* Blue accent corner */}
-            <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#3B71E8] rounded-full"></div>
+          {/* Main dashboard card with premium gradient border */}
+          <div className="relative transform md:rotate-[-3deg] rounded-2xl bg-gradient-to-br from-[#3B71E8] via-[#3B71E8] to-[#F28C28] p-1 shadow-2xl">
+            <div className="rounded-2xl bg-white overflow-hidden">
+              <img
+                src="/dashboard-preview.png"
+                alt="dashboard"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
 
-          {/* floating cards - primary blue theme */}
-          <div className="hidden md:block absolute left-[-30px] top-[110px] bg-white border-2 border-[#3B71E8] p-3 rounded-lg shadow-xl w-44 float-card">
-
-            <div className="flex items-center gap-2 text-[#3B71E8] text-sm font-medium">
-              📊 <span className="text-gray-700">Performance</span>
+          {/* Floating cards with premium styling */}
+          <div className="hidden md:block absolute -left-12 top-24 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-xl p-4 w-48 float-card hover:shadow-2xl transition-all duration-300">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3B71E8] to-[#3B71E8] flex items-center justify-center text-white">📊</div>
+              <span className="font-medium text-[#1F1F1F]">Performance</span>
             </div>
-
-            <p className="text-[#1F1F1F] font-semibold mt-1">92% Average</p>
-
-            <p className="text-gray-500 text-xs">+4% improvement</p>
-
-            {/* Blue indicator dot */}
-            <div className="absolute bottom-2 right-2 w-2 h-2 bg-[#3B71E8] rounded-full"></div>
+            <p className="text-2xl font-bold text-[#1F1F1F]">92%</p>
+            <p className="text-xs text-gray-500">Average score</p>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] rounded-full"></div>
           </div>
 
-          {/* Secondary: Orange accent card */}
-          <div className="hidden md:block absolute right-[-30px] top-[40px] bg-white border-2 border-[#F28C28] p-3 rounded-lg shadow-xl w-44 float-card">
-
-            <div className="flex items-center gap-2 text-[#F28C28] text-sm font-medium">
-              💰 <span className="text-gray-700">School Fees</span>
+          <div className="hidden md:block absolute -right-12 top-32 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-xl p-4 w-48 float-card hover:shadow-2xl transition-all duration-300">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#F28C28] to-[#F28C28] flex items-center justify-center text-white">💰</div>
+              <span className="font-medium text-[#1F1F1F]">Fees</span>
             </div>
-
-            <p className="text-[#1F1F1F] font-semibold mt-1">₦4.2M</p>
-
-            <p className="text-gray-500 text-xs">Collected this term</p>
-
-            {/* Orange indicator dot */}
-            <div className="absolute bottom-2 right-2 w-2 h-2 bg-[#F28C28] rounded-full"></div>
+            <p className="text-2xl font-bold text-[#1F1F1F]">₦4.2M</p>
+            <p className="text-xs text-gray-500">Collected this term</p>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#F28C28] to-[#F28C28] rounded-full"></div>
           </div>
 
-          {/* Primary: Blue accent card */}
-          <div className="hidden md:block absolute left-[10px] bottom-[10px] bg-white border-2 border-[#3B71E8] p-3 rounded-lg shadow-xl w-44 float-card">
-
-            <div className="flex items-center gap-2 text-[#3B71E8] text-sm font-medium">
-              👨‍👩‍👧 <span className="text-gray-700">Parents</span>
+          <div className="hidden md:block absolute left-4 bottom-0 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-xl p-4 w-48 float-card hover:shadow-2xl transition-all duration-300">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3B71E8] to-[#F28C28] flex items-center justify-center text-white">👥</div>
+              <span className="font-medium text-[#1F1F1F]">Parents</span>
             </div>
-
-            <p className="text-[#1F1F1F] font-semibold mt-1">312 Active</p>
-
-            <p className="text-gray-500 text-xs">Portal engagement</p>
-
-            {/* Blue indicator dot */}
-            <div className="absolute bottom-2 right-2 w-2 h-2 bg-[#3B71E8] rounded-full"></div>
+            <p className="text-2xl font-bold text-[#1F1F1F]">312</p>
+            <p className="text-xs text-gray-500">Active on portal</p>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#3B71E8] to-[#F28C28] rounded-full"></div>
           </div>
 
-          {/* Secondary: Orange accent card */}
-          <div className="hidden md:block absolute right-[10px] bottom-[0px] bg-white border-2 border-[#F28C28] p-3 rounded-lg shadow-xl w-44 float-card">
-
-            <div className="flex items-center gap-2 text-[#F28C28] text-sm font-medium">
-              ✅ <span className="text-gray-700">Attendance</span>
+          <div className="hidden md:block absolute right-8 bottom-12 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-xl p-4 w-48 float-card hover:shadow-2xl transition-all duration-300">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#F28C28] to-[#3B71E8] flex items-center justify-center text-white">✅</div>
+              <span className="font-medium text-[#1F1F1F]">Attendance</span>
             </div>
-
-            <p className="text-[#1F1F1F] font-semibold mt-1">96%</p>
-
-            <p className="text-gray-500 text-xs">Today</p>
-
-            {/* Orange indicator dot */}
-            <div className="absolute bottom-2 right-2 w-2 h-2 bg-[#F28C28] rounded-full"></div>
+            <p className="text-2xl font-bold text-[#1F1F1F]">96%</p>
+            <p className="text-xs text-gray-500">Today</p>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#F28C28] to-[#3B71E8] rounded-full"></div>
           </div>
 
         </div>
