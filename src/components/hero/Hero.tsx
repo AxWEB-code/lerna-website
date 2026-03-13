@@ -70,15 +70,6 @@ export default function Hero() {
 
           </div>
 
-          {/* Trust indicators - REMOVED 500+ TEXT, KEPT CIRCLES */}
-          <div className="flex items-center mt-8 pt-5 border-t border-gray-100">
-            <div className="flex -space-x-2">
-              {[1,2,3,4].map((i) => (
-                <div key={i} className="w-7 h-7 rounded-full bg-gradient-to-br from-[#3B71E8] to-[#F28C28] opacity-60 border-2 border-white"></div>
-              ))}
-            </div>
-          </div>
-
         </div>
 
         {/* RIGHT HERO VISUAL */}
