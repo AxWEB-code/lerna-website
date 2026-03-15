@@ -88,41 +88,59 @@ export default function Blog() {
   const showFeatured = activeTopic === "All Topics" || allPosts.featured.category === activeTopic;
 
   return (
-    <section className="relative bg-[#0a0e1a] text-white py-24">
-      {/* Sophisticated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-500/[0.02] via-transparent to-blue-500/[0.02]" />
+    <section className="relative bg-gradient-to-br from-white via-white to-blue-50/30 py-24 overflow-hidden -mt-px">
+
+      {/* Premium animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Gradient orbs */}
+        <div className="absolute top-40 left-1/3 w-[600px] h-[600px] bg-gradient-to-r from-[#3B71E8]/5 to-transparent rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-l from-[#F28C28]/5 to-transparent rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#3B71E8]/3 via-transparent to-[#F28C28]/3 rounded-full blur-[150px]"></div>
+        
+        {/* Subtle grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h60v60H0z" fill="none"/%3E%3Cpath d="M0 0h60M0 60h60M0 0v60M60 0v60" stroke="%233B71E8" stroke-width="0.5" stroke-opacity="0.03"/%3E%3C/svg%3E')`,
+            backgroundRepeat: 'repeat'
+          }}
+        ></div>
+      </div>
+
+      {/* Floating icons with brand gradient */}
+      <div className="floating-icon text-4xl top-20 left-20 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📝</div>
+      <div className="floating-icon text-3xl bottom-20 right-32 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📚</div>
+      <div className="floating-icon text-3xl top-1/3 left-10 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">💡</div>
+      <div className="floating-icon text-3xl bottom-16 right-10 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📊</div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-        {/* Header - Always visible immediately */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <div className="flex items-center gap-4 mb-4">
-            <span className="text-green-400 font-mono text-sm tracking-widest">
-              BLOG
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">
+            <span className="text-[#1F1F1F]">Insights &</span>
+            <br />
+            <span className="bg-gradient-to-r from-[#3B71E8] via-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
+              Perspectives
             </span>
-            <div className="h-px w-12 bg-green-500/30" />
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Insights & Perspectives
           </h2>
           
-          <p className="text-gray-400 text-lg max-w-2xl">
+          <p className="text-gray-500 text-lg max-w-2xl">
             Thought leadership, practical advice, and fresh perspectives on 
             education from experts across Africa.
           </p>
         </motion.div>
 
-        {/* Topic filters - Always visible immediately */}
+        {/* Topic filters */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-wrap gap-2 mb-12 pb-6 border-b border-white/[0.05]"
+          className="flex flex-wrap gap-2 mb-12 pb-6 border-b border-gray-200"
         >
           {topics.map((topic, i) => (
             <button
@@ -130,8 +148,8 @@ export default function Blog() {
               onClick={() => setActiveTopic(topic)}
               className={`px-4 py-2 text-sm rounded-full transition-all ${
                 activeTopic === topic
-                  ? 'bg-green-500/10 text-green-400 border border-green-500/30' 
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  ? 'bg-gradient-to-r from-[#3B71E8] to-[#F28C28] text-white shadow-lg shadow-[#3B71E8]/25' 
+                  : 'text-gray-500 hover:text-[#3B71E8] hover:bg-white/50 border border-transparent'
               }`}
             >
               {topic}
@@ -139,7 +157,7 @@ export default function Blog() {
           ))}
         </motion.div>
 
-        {/* Featured post - Always visible immediately (removed inView dependency) */}
+        {/* Featured post */}
         {showFeatured && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -149,55 +167,55 @@ export default function Blog() {
           >
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
-                <div className="inline-block px-3 py-1 bg-green-500/10 rounded-full text-xs text-green-400 mb-4">
+                <div className="inline-block px-3 py-1 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 rounded-full text-xs text-[#3B71E8] mb-4">
                   {allPosts.featured.category}
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold mb-4 leading-tight">
+                <h3 className="text-3xl lg:text-4xl font-extrabold text-[#1F1F1F] mb-4 leading-tight">
                   {allPosts.featured.title}
                 </h3>
-                <p className="text-gray-400 text-lg mb-6">
+                <p className="text-gray-500 text-lg mb-6">
                   {allPosts.featured.excerpt}
                 </p>
                 <div className="flex items-center gap-4 mb-6">
                   <div>
-                    <p className="font-medium">{allPosts.featured.author}</p>
+                    <p className="font-bold text-[#1F1F1F]">{allPosts.featured.author}</p>
                     <p className="text-sm text-gray-500">{allPosts.featured.role}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 text-sm text-gray-500">
+                <div className="flex items-center gap-4 text-sm text-gray-400">
                   <span>{allPosts.featured.date}</span>
                   <span>•</span>
                   <span>{allPosts.featured.readTime}</span>
                 </div>
-                <a href="/blog/the-future-of-learning" className="inline-flex items-center gap-2 mt-6 text-green-400 hover:text-green-300 transition-colors">
+                <a href="/blog/the-future-of-learning" className="inline-flex items-center gap-2 mt-6 text-[#3B71E8] hover:text-[#F28C28] transition-colors font-semibold">
                   Read featured article
                   <span className="text-xl">→</span>
                 </a>
               </div>
-              <div className="relative aspect-[4/3] bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-2xl border border-white/[0.05] flex items-center justify-center">
+              <div className="relative aspect-[4/3] bg-gradient-to-br from-[#3B71E8]/10 to-[#F28C28]/10 rounded-2xl border border-gray-200 flex items-center justify-center">
                 <span className="text-8xl opacity-30">📚</span>
               </div>
             </div>
           </motion.div>
         )}
 
-        {/* Results count - Always visible immediately */}
+        {/* Results count */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.25 }}
-          className="mb-4 text-sm text-gray-500"
+          className="mb-4 text-sm text-gray-400"
         >
           Showing {filteredPosts.length} articles {activeTopic !== "All Topics" && `in ${activeTopic}`}
         </motion.div>
 
-        {/* Recent posts grid - These can still use inView for scroll animation */}
+        {/* Recent posts grid */}
         <div ref={ref}>
           <div className="flex items-center gap-4 mb-8">
-            <h3 className="text-xl font-semibold">
+            <h3 className="text-xl font-bold text-[#1F1F1F]">
               {activeTopic === "All Topics" ? "Recent articles" : `${activeTopic} articles`}
             </h3>
-            <div className="h-px flex-1 bg-white/[0.05]" />
+            <div className="h-px flex-1 bg-gray-200" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -209,25 +227,28 @@ export default function Blog() {
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                 className="group"
               >
-                <a href="#" className="block p-6 rounded-xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/[0.05]">
+                <a href="#" className="block p-6 rounded-xl bg-white/70 backdrop-blur-sm border border-gray-200/50 hover:border-[#3B71E8]/30 hover:shadow-lg hover:shadow-[#3B71E8]/10 transition-all duration-300">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs px-2 py-1 bg-green-500/10 rounded-full text-green-400">
+                    <span className="text-xs px-2 py-1 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 rounded-full text-[#3B71E8]">
                       {post.category}
                     </span>
                   </div>
-                  <h4 className="text-lg font-semibold mb-2 group-hover:text-green-400 transition-colors">
+                  <h4 className="text-lg font-bold text-[#1F1F1F] mb-2 group-hover:text-[#3B71E8] transition-colors">
                     {post.title}
                   </h4>
-                  <p className="text-gray-400 text-sm mb-3">
+                  <p className="text-gray-500 text-sm mb-3">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-3 text-xs text-gray-500">
+                  <div className="flex items-center gap-3 text-xs text-gray-400">
                     <span>{post.author}</span>
                     <span>•</span>
                     <span>{post.date}</span>
                     <span>•</span>
                     <span>{post.readTime}</span>
                   </div>
+
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-[#3B71E8]/10 to-transparent rounded-tr-xl"></div>
                 </a>
               </motion.article>
             ))}
@@ -245,25 +266,25 @@ export default function Blog() {
           )}
         </div>
 
-        {/* Newsletter - Can still use inView for scroll animation */}
+        {/* Newsletter */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-20 p-8 bg-gradient-to-br from-white/[0.03] to-transparent rounded-2xl border border-white/[0.05]"
+          className="mt-20 p-8 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 rounded-2xl border border-[#3B71E8]/20 backdrop-blur-sm"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h4 className="text-xl font-semibold mb-2">Get insights in your inbox</h4>
-              <p className="text-gray-400">Weekly articles on education, technology, and school leadership.</p>
+              <h4 className="text-xl font-bold text-[#1F1F1F] mb-2">Get insights in your inbox</h4>
+              <p className="text-gray-500">Weekly articles on education, technology, and school leadership.</p>
             </div>
             <div className="flex gap-2 min-w-[300px]">
               <input 
                 type="email" 
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-white/[0.05] rounded-lg border border-white/[0.05] focus:outline-none focus:border-green-500/30 text-sm"
+                className="flex-1 px-4 py-3 bg-white/70 backdrop-blur-sm rounded-lg border border-gray-200/50 focus:outline-none focus:border-[#3B71E8]/30 text-sm text-[#1F1F1F] placeholder-gray-400"
               />
-              <button className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition-colors whitespace-nowrap">
+              <button className="px-6 py-3 bg-gradient-to-r from-[#3B71E8] to-[#F28C28] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#3B71E8]/25 transition-all duration-300 whitespace-nowrap">
                 Subscribe
               </button>
             </div>
