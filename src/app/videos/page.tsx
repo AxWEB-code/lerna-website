@@ -164,13 +164,6 @@ export default function VideoLessons() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 backdrop-blur-sm px-4 py-2 rounded-full border border-[#3B71E8]/20 mb-6">
-            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"></span>
-            <span className="text-sm font-semibold bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
-              VIDEO LEARNING
-            </span>
-          </div>
-
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
             <span className="text-[#1F1F1F]">Video Lessons</span>
             <br />
