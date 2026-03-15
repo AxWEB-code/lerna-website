@@ -11,32 +11,24 @@ export default function Features() {
         
         {/* Subtle grid pattern - Blue */}
         <div 
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h60v60H0z" fill="none"/%3E%3Cpath d="M0 0h60M0 60h60M0 0v60M60 0v60" stroke="%233B71E8" stroke-width="0.5" stroke-opacity="0.05"/%3E%3C/svg%3E')`,
+            backgroundImage: `url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h60v60H0z" fill="none"/%3E%3Cpath d="M0 0h60M0 60h60M0 0v60M60 0v60" stroke="%233B71E8" stroke-width="0.5" stroke-opacity="0.03"/%3E%3C/svg%3E')`,
             backgroundRepeat: 'repeat'
           }}
         ></div>
       </div>
 
       {/* Floating icons with brand gradient */}
-      <div className="floating-icon text-4xl top-20 left-20 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-30">🎓</div>
-      <div className="floating-icon text-3xl bottom-20 right-32 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-30">📚</div>
-      <div className="floating-icon text-3xl top-1/3 left-10 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-30">📊</div>
-      <div className="floating-icon text-3xl bottom-16 right-10 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-30">🏫</div>
+      <div className="floating-icon text-4xl top-20 left-20 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">🎓</div>
+      <div className="floating-icon text-3xl bottom-20 right-32 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📚</div>
+      <div className="floating-icon text-3xl top-1/3 left-10 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📊</div>
+      <div className="floating-icon text-3xl bottom-16 right-10 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">🏫</div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto">
-
-          {/* Premium badge with brand colors */}
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 backdrop-blur-sm px-4 py-2 rounded-full border border-[#3B71E8]/20 mb-6">
-            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"></span>
-            <span className="text-sm font-medium bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
-              Comprehensive Solutions
-            </span>
-          </div>
 
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
             <span className="text-[#1F1F1F]">Everything Your School</span>
@@ -46,7 +38,7 @@ export default function Features() {
             </span>
           </h2>
 
-          <p className="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
             Lerna provides a complete infrastructure for modern schools
             to manage academics, communication and operations.
           </p>
@@ -57,7 +49,7 @@ export default function Features() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
 
           {/* Student Management - Primary Blue */}
-          <div className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:border-[#3B71E8]/30 hover:shadow-2xl hover:shadow-[#3B71E8]/10 transition-all duration-500">
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#3B71E8]/30 hover:shadow-2xl hover:shadow-[#3B71E8]/10 transition-all duration-500">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3B71E8]/0 to-[#F28C28]/0 group-hover:from-[#3B71E8]/5 group-hover:to-[#F28C28]/5 transition-all duration-500"></div>
             
             <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -68,12 +60,12 @@ export default function Features() {
               Student Management
             </h3>
 
-            <p className="relative text-gray-600 text-sm leading-relaxed">
+            <p className="relative text-gray-500 text-sm leading-relaxed">
               Easily manage student profiles, class assignments,
               academic levels and personal records from one system.
             </p>
 
-            <ul className="relative text-sm text-gray-500 mt-4 space-y-2">
+            <ul className="relative text-sm text-gray-400 mt-4 space-y-2">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"></span>
                 Student profile records
@@ -92,7 +84,7 @@ export default function Features() {
           </div>
 
           {/* Attendance - Secondary Orange */}
-          <div className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:border-[#F28C28]/30 hover:shadow-2xl hover:shadow-[#F28C28]/10 transition-all duration-500">
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#F28C28]/30 hover:shadow-2xl hover:shadow-[#F28C28]/10 transition-all duration-500">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#F28C28]/0 to-[#3B71E8]/0 group-hover:from-[#F28C28]/5 group-hover:to-[#3B71E8]/5 transition-all duration-500"></div>
             
             <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#F28C28] to-[#3B71E8] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -103,12 +95,12 @@ export default function Features() {
               Attendance Tracking
             </h3>
 
-            <p className="relative text-gray-600 text-sm leading-relaxed">
+            <p className="relative text-gray-500 text-sm leading-relaxed">
               Monitor daily student attendance with digital
               registers and automated reporting tools.
             </p>
 
-            <ul className="relative text-sm text-gray-500 mt-4 space-y-2">
+            <ul className="relative text-sm text-gray-400 mt-4 space-y-2">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#F28C28] to-[#3B71E8]"></span>
                 Smart attendance recording
@@ -127,7 +119,7 @@ export default function Features() {
           </div>
 
           {/* Results - Primary Blue */}
-          <div className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:border-[#3B71E8]/30 hover:shadow-2xl hover:shadow-[#3B71E8]/10 transition-all duration-500">
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#3B71E8]/30 hover:shadow-2xl hover:shadow-[#3B71E8]/10 transition-all duration-500">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3B71E8]/0 to-[#F28C28]/0 group-hover:from-[#3B71E8]/5 group-hover:to-[#F28C28]/5 transition-all duration-500"></div>
             
             <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -138,12 +130,12 @@ export default function Features() {
               Result Management
             </h3>
 
-            <p className="relative text-gray-600 text-sm leading-relaxed">
+            <p className="relative text-gray-500 text-sm leading-relaxed">
               Teachers can input scores, compute results,
               and generate report cards digitally.
             </p>
 
-            <ul className="relative text-sm text-gray-500 mt-4 space-y-2">
+            <ul className="relative text-sm text-gray-400 mt-4 space-y-2">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"></span>
                 Score input & grading
@@ -162,7 +154,7 @@ export default function Features() {
           </div>
 
           {/* Parent Portal - Secondary Orange */}
-          <div className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:border-[#F28C28]/30 hover:shadow-2xl hover:shadow-[#F28C28]/10 transition-all duration-500">
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#F28C28]/30 hover:shadow-2xl hover:shadow-[#F28C28]/10 transition-all duration-500">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#F28C28]/0 to-[#3B71E8]/0 group-hover:from-[#F28C28]/5 group-hover:to-[#3B71E8]/5 transition-all duration-500"></div>
             
             <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#F28C28] to-[#3B71E8] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -173,12 +165,12 @@ export default function Features() {
               Parent Portal
             </h3>
 
-            <p className="relative text-gray-600 text-sm leading-relaxed">
+            <p className="relative text-gray-500 text-sm leading-relaxed">
               Parents stay informed with access to student
               results, attendance and school announcements.
             </p>
 
-            <ul className="relative text-sm text-gray-500 mt-4 space-y-2">
+            <ul className="relative text-sm text-gray-400 mt-4 space-y-2">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#F28C28] to-[#3B71E8]"></span>
                 Student progress monitoring
@@ -197,7 +189,7 @@ export default function Features() {
           </div>
 
           {/* Payments - Primary Blue */}
-          <div className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:border-[#3B71E8]/30 hover:shadow-2xl hover:shadow-[#3B71E8]/10 transition-all duration-500">
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#3B71E8]/30 hover:shadow-2xl hover:shadow-[#3B71E8]/10 transition-all duration-500">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3B71E8]/0 to-[#F28C28]/0 group-hover:from-[#3B71E8]/5 group-hover:to-[#F28C28]/5 transition-all duration-500"></div>
             
             <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -208,12 +200,12 @@ export default function Features() {
               School Payments
             </h3>
 
-            <p className="relative text-gray-600 text-sm leading-relaxed">
+            <p className="relative text-gray-500 text-sm leading-relaxed">
               Accept school fee payments securely with
               automated receipts and payment tracking.
             </p>
 
-            <ul className="relative text-sm text-gray-500 mt-4 space-y-2">
+            <ul className="relative text-sm text-gray-400 mt-4 space-y-2">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"></span>
                 Online fee payments
@@ -232,7 +224,7 @@ export default function Features() {
           </div>
 
           {/* Learning Resources - Secondary Orange */}
-          <div className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:border-[#F28C28]/30 hover:shadow-2xl hover:shadow-[#F28C28]/10 transition-all duration-500">
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#F28C28]/30 hover:shadow-2xl hover:shadow-[#F28C28]/10 transition-all duration-500">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#F28C28]/0 to-[#3B71E8]/0 group-hover:from-[#F28C28]/5 group-hover:to-[#3B71E8]/5 transition-all duration-500"></div>
             
             <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#F28C28] to-[#3B71E8] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -243,12 +235,12 @@ export default function Features() {
               Learning Resources
             </h3>
 
-            <p className="relative text-gray-600 text-sm leading-relaxed">
+            <p className="relative text-gray-500 text-sm leading-relaxed">
               Upload lesson plans, digital resources and
               teaching materials for easy access.
             </p>
 
-            <ul className="relative text-sm text-gray-500 mt-4 space-y-2">
+            <ul className="relative text-sm text-gray-400 mt-4 space-y-2">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#F28C28] to-[#3B71E8]"></span>
                 Lesson plan uploads
