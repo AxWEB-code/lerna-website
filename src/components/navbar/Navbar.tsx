@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"  // Add this import
 import { useState, useEffect } from "react"
 
 const links = [
@@ -49,19 +50,23 @@ export default function Navbar() {
         : "backdrop-blur-sm bg-white/80 border-b border-gray-200/50 shadow-sm"
     }`}>
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-6 py-3">
 
-        {/* Logo - Premium with gradient accent */}
-        <div className="text-xl font-bold text-[#1F1F1F] relative group">
-          <span className="relative">
-            <span className="text-[#3B71E8] relative z-10">L</span>
+        {/* Logo - Image instead of text */}
+        <Link href="/" className="relative group flex items-center">
+          <div className="relative h-10 w-auto">
+            <Image
+              src="/logo.png"
+              alt="Lerna Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+              priority
+            />
+            {/* Optional subtle hover effect */}
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#3B71E8] to-[#F28C28] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-          </span>
-          <span className="relative">
-            erna
-            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#3B71E8] to-[#F28C28] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left delay-100"></span>
-          </span>
-        </div>
+          </div>
+        </Link>
 
         {/* Desktop Navigation with premium indicators */}
         <nav className="hidden md:flex items-center gap-1">
