@@ -2,21 +2,18 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1F1F1F;
+  --primary: #3B71E8;
+  --secondary: #F28C28;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -25,19 +22,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+/* Remove the dark background override */
+/* body {
   background-color: #0f1117;
-}
+} */
 
+/* Hero grid pattern - updated to blue */
 .hero-grid {
   background-image: radial-gradient(
       circle at center,
-      rgba(255,255,255,0.03) 1px,
+      rgba(59, 113, 232, 0.03) 1px,
       transparent 1px
   );
   background-size: 40px 40px;
 }
 
+/* Floating animations */
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
@@ -63,16 +63,11 @@ body {
   animation: fadeUp 0.9s ease forwards;
 }
 
+/* Combined floating icon animations */
 @keyframes floatSlow {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-25px); }
   100% { transform: translateY(0px); }
-}
-
-.floating-icon {
-  position: absolute;
-  opacity: 0.08;
-  animation: floatSlow 12s ease-in-out infinite;
 }
 
 @keyframes drift {
@@ -93,14 +88,7 @@ body {
   animation: drift 18s ease-in-out infinite;
 }
 
-@keyframes pulseSoft {
-  0% { opacity: 0.4; }
-  50% { opacity: 1; }
-  100% { opacity: 0.4; }
-}
-
-
-
+/* Navigation link underline - updated to blue */
 .nav-link {
   position: relative;
 }
@@ -112,7 +100,7 @@ body {
   bottom: -4px;
   width: 0%;
   height: 2px;
-  background: #22c55e;
+  background: #3B71E8;
   transition: width 0.3s ease;
 }
 
@@ -120,24 +108,11 @@ body {
   width: 100%;
 }
 
-
+/* Feature card styles - updated for light theme */
 .feature-card {
-  background: #111827;
-  border: 1px solid #1f2937;
-  padding: 24px;
-  border-radius: 14px;
-  transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-6px);
-  border-color: #22c55e;
-}
-
-.feature-card {
-  background: rgba(17, 24, 39, 0.45);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(59, 113, 232, 0.1);
   padding: 28px;
   border-radius: 18px;
   transition: all 0.35s ease;
@@ -145,15 +120,15 @@ body {
 
 .feature-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(34,197,94,0.6);
-  box-shadow: 0 10px 35px rgba(34,197,94,0.15);
+  border-color: rgba(59, 113, 232, 0.3);
+  box-shadow: 0 10px 35px rgba(59, 113, 232, 0.1);
 }
 
-
+/* Step card styles - updated for light theme */
 .step-card {
-  background: rgba(17,24,39,0.45);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(59, 113, 232, 0.1);
   padding: 30px;
   border-radius: 18px;
   transition: all 0.3s ease;
@@ -162,10 +137,11 @@ body {
 .step-card h3 {
   font-weight: 600;
   margin-top: 10px;
+  color: #1F1F1F;
 }
 
 .step-card p {
-  color: #9ca3af;
+  color: #6B7280;
   margin-top: 8px;
   font-size: 14px;
 }
@@ -173,37 +149,20 @@ body {
 .step-number {
   font-size: 12px;
   font-weight: 600;
-  color: #22c55e;
+  color: #3B71E8;
   letter-spacing: 1px;
 }
 
 .step-card:hover {
   transform: translateY(-6px);
-  border-color: #22c55e;
+  border-color: rgba(59, 113, 232, 0.3);
 }
 
-
-.float-illustration {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-
+/* Resource card styles - updated for light theme */
 .resource-card {
-  background: rgba(17,24,39,0.45);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(59, 113, 232, 0.1);
   border-radius: 18px;
   padding: 28px;
   transition: all 0.3s ease;
@@ -211,22 +170,23 @@ body {
 
 .resource-card:hover {
   transform: translateY(-6px);
-  border-color: #22c55e;
+  border-color: rgba(59, 113, 232, 0.3);
 }
 
 .resource-thumb {
   font-size: 32px;
   margin-bottom: 16px;
-  color: #22c55e;
+  color: #3B71E8;
 }
 
 .resource-title {
   font-size: 18px;
   font-weight: 600;
+  color: #1F1F1F;
 }
 
 .resource-text {
-  color: #9ca3af;
+  color: #6B7280;
   margin-top: 8px;
   font-size: 14px;
 }
@@ -234,13 +194,42 @@ body {
 .resource-btn {
   margin-top: 16px;
   font-size: 14px;
-  color: #22c55e;
+  color: #3B71E8;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
+.resource-btn:hover {
+  color: #F28C28;
+}
+
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Animation utilities */
+@keyframes pulseSoft {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(to right, #3B71E8, #F28C28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card corner accent */
+.corner-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(59, 113, 232, 0.1) 0%, transparent 100%);
+  border-top-right-radius: inherit;
 }
