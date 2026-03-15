@@ -1,6 +1,6 @@
 export default function Features() {
   return (
-    <section id="features" className="relative bg-gradient-to-br from-white via-white to-blue-50/30 py-24 overflow-hidden">
+    <section id="features" className="relative bg-gradient-to-br from-white via-white to-blue-50/30 py-24 overflow-hidden -mt-px">
 
       {/* Premium animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
