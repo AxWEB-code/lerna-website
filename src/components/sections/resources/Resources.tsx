@@ -163,15 +163,7 @@ export default function Resources() {
 
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <button className="group relative px-8 py-3 rounded-lg bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] hover:from-[#3B71E8] hover:to-[#F28C28] text-white font-bold text-base transition-all duration-500 shadow-lg shadow-[#3B71E8]/25 hover:shadow-xl hover:shadow-[#F28C28]/25 transform hover:-translate-y-0.5 overflow-hidden">
-            <span className="relative z-10">Browse All Resources</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#F28C28] to-[#3B71E8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-          </button>
-        </div>
-
+        
       </div>
 
     </section>

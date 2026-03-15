@@ -18,7 +18,7 @@ const videos = [
     views: "2.5k",
     rating: 4.8,
     icon: "🔢",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-[#3B71E8] to-[#F28C28]",
     tags: ["Algebra", "Equations", "Beginners"]
   },
   {
@@ -34,7 +34,7 @@ const videos = [
     views: "3.1k",
     rating: 4.9,
     icon: "📝",
-    color: "from-green-500 to-emerald-500",
+    color: "from-[#F28C28] to-[#3B71E8]",
     tags: ["Grammar", "Writing", "Comprehension"]
   },
   {
@@ -50,7 +50,7 @@ const videos = [
     views: "1.8k",
     rating: 4.7,
     icon: "🔬",
-    color: "from-purple-500 to-pink-500",
+    color: "from-[#3B71E8] to-[#F28C28]",
     tags: ["Experiments", "Practical", "Science"]
   },
   {
@@ -66,7 +66,7 @@ const videos = [
     views: "1.2k",
     rating: 4.6,
     icon: "🏛️",
-    color: "from-orange-500 to-red-500",
+    color: "from-[#F28C28] to-[#3B71E8]",
     tags: ["Government", "Civics", "Politics"]
   },
   {
@@ -82,7 +82,7 @@ const videos = [
     views: "2.2k",
     rating: 4.9,
     icon: "📚",
-    color: "from-indigo-500 to-purple-500",
+    color: "from-[#3B71E8] to-[#F28C28]",
     tags: ["Poetry", "Prose", "Drama"]
   },
   {
@@ -98,7 +98,7 @@ const videos = [
     views: "2.8k",
     rating: 4.8,
     icon: "⚡",
-    color: "from-yellow-500 to-orange-500",
+    color: "from-[#F28C28] to-[#3B71E8]",
     tags: ["Physics", "Mechanics", "Energy"]
   }
 ];
@@ -130,25 +130,33 @@ export default function VideoLessons() {
   });
 
   return (
-    <section id="videos" className="relative bg-[#0a0e1a] text-white py-24 overflow-hidden">
-      {/* Premium Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.1),transparent_50%)]" />
-      
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }} />
+    <section id="videos" className="relative bg-gradient-to-br from-white via-white to-blue-50/30 py-24 overflow-hidden -mt-px">
+
+      {/* Premium animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Gradient orbs */}
+        <div className="absolute top-40 left-1/3 w-[600px] h-[600px] bg-gradient-to-r from-[#3B71E8]/5 to-transparent rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-l from-[#F28C28]/5 to-transparent rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#3B71E8]/3 via-transparent to-[#F28C28]/3 rounded-full blur-[150px]"></div>
+        
+        {/* Subtle grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h60v60H0z" fill="none"/%3E%3Cpath d="M0 0h60M0 60h60M0 0v60M60 0v60" stroke="%233B71E8" stroke-width="0.5" stroke-opacity="0.03"/%3E%3C/svg%3E')`,
+            backgroundRepeat: 'repeat'
+          }}
+        ></div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-green-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+      {/* Floating icons with brand gradient */}
+      <div className="floating-icon text-4xl top-20 left-20 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">🎥</div>
+      <div className="floating-icon text-3xl bottom-20 right-32 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📚</div>
+      <div className="floating-icon text-3xl top-1/3 left-10 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">🔬</div>
+      <div className="floating-icon text-3xl bottom-16 right-10 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">⚡</div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -156,39 +164,40 @@ export default function VideoLessons() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-green-400 font-mono text-sm tracking-widest mb-4 block">
-            VIDEO LEARNING
-          </span>
-
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Video Lessons
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 backdrop-blur-sm px-4 py-2 rounded-full border border-[#3B71E8]/20 mb-6">
+            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"></span>
+            <span className="text-sm font-semibold bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
+              VIDEO LEARNING
             </span>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            <span className="text-[#1F1F1F]">Video Lessons</span>
             <br />
-            <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3B71E8] via-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
               Learn Visually
             </span>
           </h1>
 
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
             Interactive learning videos designed to help students understand complex subjects 
             through engaging visual explanations.
           </p>
 
           {/* Stats Bar */}
-          <div className="flex items-center justify-center gap-8 mt-8">
+          <div className="flex items-center justify-center gap-8 mt-8 p-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 max-w-md mx-auto">
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">100+</div>
+              <div className="text-2xl font-extrabold text-[#1F1F1F]">100+</div>
               <div className="text-xs text-gray-500">Video Lessons</div>
             </div>
-            <div className="w-px h-8 bg-white/10" />
+            <div className="w-px h-8 bg-gray-200" />
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">15k+</div>
+              <div className="text-2xl font-extrabold text-[#1F1F1F]">15k+</div>
               <div className="text-xs text-gray-500">Students</div>
             </div>
-            <div className="w-px h-8 bg-white/10" />
+            <div className="w-px h-8 bg-gray-200" />
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">4.8</div>
+              <div className="text-2xl font-extrabold text-[#1F1F1F]">4.8</div>
               <div className="text-xs text-gray-500">Avg Rating</div>
             </div>
           </div>
@@ -208,23 +217,23 @@ export default function VideoLessons() {
               placeholder="Search videos by title, subject, or instructor..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-6 py-4 bg-white/[0.03] border border-white/[0.05] rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-green-500/30 transition-colors pl-14"
+              className="w-full px-6 py-4 bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-2xl text-[#1F1F1F] placeholder-gray-400 focus:outline-none focus:border-[#3B71E8]/30 transition-colors pl-14"
             />
-            <span className="absolute left-5 top-1/2 -translate-y-1/2 text-2xl text-gray-500">🔍</span>
+            <span className="absolute left-5 top-1/2 -translate-y-1/2 text-2xl text-gray-400">🔍</span>
           </div>
 
           {/* Filter Pills */}
           <div className="flex flex-wrap items-center justify-center gap-3">
             {/* Subject Filters */}
-            <div className="flex flex-wrap gap-2 p-2 bg-white/[0.02] rounded-2xl border border-white/[0.05]">
+            <div className="flex flex-wrap gap-2 p-2 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50">
               {subjects.map((subject) => (
                 <button
                   key={subject}
                   onClick={() => setActiveSubject(subject)}
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                     activeSubject === subject
-                      ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/25"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
+                      ? "bg-gradient-to-r from-[#3B71E8] to-[#F28C28] text-white shadow-lg shadow-[#3B71E8]/25"
+                      : "text-gray-500 hover:text-[#3B71E8] hover:bg-white/50"
                   }`}
                 >
                   {subject}
@@ -233,15 +242,15 @@ export default function VideoLessons() {
             </div>
 
             {/* Level Filters */}
-            <div className="flex gap-2 p-2 bg-white/[0.02] rounded-2xl border border-white/[0.05]">
+            <div className="flex gap-2 p-2 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50">
               {levels.map((level) => (
                 <button
                   key={level}
                   onClick={() => setActiveLevel(level)}
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                     activeLevel === level
-                      ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/25"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
+                      ? "bg-gradient-to-r from-[#3B71E8] to-[#F28C28] text-white shadow-lg shadow-[#3B71E8]/25"
+                      : "text-gray-500 hover:text-[#3B71E8] hover:bg-white/50"
                   }`}
                 >
                   {level}
@@ -265,9 +274,9 @@ export default function VideoLessons() {
             animate={{ opacity: 1 }}
             className="text-center py-20"
           >
-            <span className="text-6xl mb-4 block">🎥</span>
-            <h3 className="text-2xl font-semibold mb-2">No videos found</h3>
-            <p className="text-gray-400">Try adjusting your search or filters</p>
+            <span className="text-6xl mb-4 block opacity-30">🎥</span>
+            <h3 className="text-2xl font-semibold text-[#1F1F1F] mb-2">No videos found</h3>
+            <p className="text-gray-500">Try adjusting your search or filters</p>
           </motion.div>
         )}
 
@@ -277,28 +286,28 @@ export default function VideoLessons() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-20 p-8 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-3xl border border-green-500/20 backdrop-blur-sm"
+          className="mt-20 p-8 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 rounded-3xl border border-[#3B71E8]/20 backdrop-blur-sm"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28] flex items-center justify-center">
                 <span className="text-3xl">⭐</span>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold">Get Full Access</h3>
-                <p className="text-gray-400">Unlock all video lessons with premium subscription</p>
+                <h3 className="text-2xl font-bold text-[#1F1F1F]">Get Full Access</h3>
+                <p className="text-gray-500">Unlock all video lessons with premium subscription</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right">
                 <span className="text-sm text-gray-400 line-through">₦15,000</span>
-                <div className="text-3xl font-bold text-green-400">₦9,999</div>
+                <div className="text-3xl font-extrabold text-[#3B71E8]">₦9,999</div>
                 <span className="text-xs text-gray-500">per term</span>
               </div>
               <a
                 href="https://wa.me/234XXXXXXXXXX?text=Hello%20I%20want%20to%20subscribe%20to%20video%20lessons"
                 target="_blank"
-                className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl font-medium hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300"
+                className="px-6 py-3 bg-gradient-to-r from-[#3B71E8] to-[#F28C28] text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-[#3B71E8]/25 transition-all duration-300"
               >
                 Subscribe Now →
               </a>
@@ -328,42 +337,42 @@ const VideoCard = ({ video, index }: any) => {
       onHoverEnd={() => setIsHovered(false)}
       className="group"
     >
-      <div className="relative bg-gradient-to-br from-white/[0.07] to-white/[0.02] rounded-2xl border border-white/[0.05] hover:border-green-500/30 transition-all duration-500 overflow-hidden h-full flex flex-col">
+      <div className="relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 hover:border-[#3B71E8]/30 transition-all duration-500 overflow-hidden h-full flex flex-col">
         
         {/* Animated Background */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5"
+          className="absolute inset-0 bg-gradient-to-r from-[#3B71E8]/5 to-[#F28C28]/5"
           animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3 }}
         />
 
         {/* Thumbnail with Play Button */}
-        <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900">
+        <div className="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-200">
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-6xl opacity-30">{video.icon}</span>
           </div>
           
           {/* Play Button Overlay */}
           <motion.div
-            className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 bg-white/50 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             animate={isHovered ? { scale: 1.1 } : { scale: 1 }}
           >
             <a
               href={video.videoUrl}
               target="_blank"
-              className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-xl"
+              className="w-16 h-16 bg-gradient-to-r from-[#3B71E8] to-[#F28C28] rounded-full flex items-center justify-center shadow-xl"
             >
-              <span className="text-3xl ml-1">▶</span>
+              <span className="text-3xl ml-1 text-white">▶</span>
             </a>
           </motion.div>
 
           {/* Duration Badge */}
-          <div className="absolute bottom-3 right-3 px-2 py-1 bg-black/60 rounded-lg text-xs font-mono text-white border border-white/10">
+          <div className="absolute bottom-3 right-3 px-2 py-1 bg-white/80 backdrop-blur-sm rounded-lg text-xs font-mono text-[#1F1F1F] border border-gray-200/50">
             {video.duration}
           </div>
 
           {/* Level Badge */}
-          <div className="absolute top-3 left-3 px-2 py-1 bg-green-500/20 rounded-lg text-xs font-mono text-green-400 border border-green-500/30">
+          <div className="absolute top-3 left-3 px-2 py-1 bg-[#3B71E8]/10 rounded-lg text-xs font-mono text-[#3B71E8] border border-[#3B71E8]/30">
             {video.level}
           </div>
         </div>
@@ -373,18 +382,18 @@ const VideoCard = ({ video, index }: any) => {
           {/* Title and Instructor */}
           <div className="mb-3">
             <div className="flex items-start justify-between gap-2 mb-1">
-              <h3 className="text-lg font-semibold leading-tight flex-1">
+              <h3 className="text-lg font-bold text-[#1F1F1F] leading-tight flex-1">
                 {video.title}
               </h3>
-              <span className="px-2 py-1 bg-white/5 rounded-lg text-xs text-gray-400 whitespace-nowrap">
+              <span className="px-2 py-1 bg-gray-100 rounded-lg text-xs text-gray-500 whitespace-nowrap">
                 {video.subject}
               </span>
             </div>
-            <p className="text-sm text-gray-400">by {video.instructor}</p>
+            <p className="text-sm text-gray-500">by {video.instructor}</p>
           </div>
 
           {/* Description */}
-          <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
+          <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
             {video.description}
           </p>
 
@@ -393,7 +402,7 @@ const VideoCard = ({ video, index }: any) => {
             {video.tags.map((tag: any, idx: number) => (
               <span
                 key={idx}
-                className="px-2 py-1 bg-white/5 rounded-lg text-xs text-gray-400"
+                className="px-2 py-1 bg-gray-100 rounded-lg text-xs text-gray-500"
               >
                 #{tag}
               </span>
@@ -401,17 +410,17 @@ const VideoCard = ({ video, index }: any) => {
           </div>
 
           {/* Metadata Stats */}
-          <div className="grid grid-cols-3 gap-2 mb-4 p-3 bg-white/[0.02] rounded-xl">
+          <div className="grid grid-cols-3 gap-2 mb-4 p-3 bg-gray-50 rounded-xl">
             <div className="text-center">
-              <div className="text-sm font-semibold text-white">{video.lessons}</div>
+              <div className="text-sm font-bold text-[#1F1F1F]">{video.lessons}</div>
               <div className="text-xs text-gray-500">Lessons</div>
             </div>
-            <div className="text-center border-x border-white/[0.05]">
-              <div className="text-sm font-semibold text-white">{video.views}</div>
+            <div className="text-center border-x border-gray-200">
+              <div className="text-sm font-bold text-[#1F1F1F]">{video.views}</div>
               <div className="text-xs text-gray-500">Views</div>
             </div>
             <div className="text-center">
-              <div className="text-sm font-semibold text-yellow-400">★ {video.rating}</div>
+              <div className="text-sm font-bold text-[#F28C28]">★ {video.rating}</div>
               <div className="text-xs text-gray-500">Rating</div>
             </div>
           </div>
@@ -420,11 +429,14 @@ const VideoCard = ({ video, index }: any) => {
           <a
             href={video.videoUrl}
             target="_blank"
-            className="mt-auto w-full py-3 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl text-sm font-medium text-green-400 hover:from-green-500/20 hover:to-emerald-500/20 transition-all duration-300 border border-green-500/20 text-center"
+            className="mt-auto w-full py-3 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 rounded-xl text-sm font-semibold text-[#3B71E8] hover:from-[#3B71E8]/20 hover:to-[#F28C28]/20 transition-all duration-300 border border-[#3B71E8]/20 text-center"
           >
             Watch Preview →
           </a>
         </div>
+
+        {/* Corner accent */}
+        <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-[#3B71E8]/10 to-transparent rounded-tr-2xl"></div>
       </div>
     </motion.div>
   );
