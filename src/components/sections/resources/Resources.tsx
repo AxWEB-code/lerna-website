@@ -1,28 +1,44 @@
 export default function Resources() {
   return (
-    <section id="resources" className="relative bg-[#0b0f1a] text-white py-24 overflow-hidden hero-grid">
+    <section id="resources" className="relative bg-gradient-to-br from-white via-white to-blue-50/30 py-24 overflow-hidden -mt-px">
 
-      {/* glow */}
-      <div className="absolute top-40 left-1/3 w-[360px] h-[360px] bg-green-500 blur-[160px] opacity-20"></div>
+      {/* Premium animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Gradient orbs */}
+        <div className="absolute top-40 left-1/3 w-[600px] h-[600px] bg-gradient-to-r from-[#3B71E8]/5 to-transparent rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-l from-[#F28C28]/5 to-transparent rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#3B71E8]/3 via-transparent to-[#F28C28]/3 rounded-full blur-[150px]"></div>
+        
+        {/* Subtle grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h60v60H0z" fill="none"/%3E%3Cpath d="M0 0h60M0 60h60M0 0v60M60 0v60" stroke="%233B71E8" stroke-width="0.5" stroke-opacity="0.03"/%3E%3C/svg%3E')`,
+            backgroundRepeat: 'repeat'
+          }}
+        ></div>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      {/* Floating icons with brand gradient */}
+      <div className="floating-icon text-4xl top-20 left-20 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📚</div>
+      <div className="floating-icon text-3xl bottom-20 right-32 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">🎥</div>
+      <div className="floating-icon text-3xl top-1/3 left-10 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📝</div>
+      <div className="floating-icon text-3xl bottom-16 right-10 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">💬</div>
 
-        {/* Heading */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 
-        <div className="text-center max-w-xl mx-auto mb-16">
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
 
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-
-            Educational Resources
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            <span className="text-[#1F1F1F]">Educational Resources</span>
             <br />
-
-            <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3B71E8] via-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
               for Teachers and Students
             </span>
-
           </h2>
 
-          <p className="text-gray-400 mt-4 text-lg">
+          <p className="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
             Access teaching materials, learning videos and
             structured educational resources built to support
             modern classrooms.
@@ -30,99 +46,130 @@ export default function Resources() {
 
         </div>
 
-
         {/* Resource Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* CARD 1 - Video Lessons */}
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#3B71E8]/30 hover:shadow-2xl hover:shadow-[#3B71E8]/10 transition-all duration-500">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3B71E8]/0 to-[#F28C28]/0 group-hover:from-[#3B71E8]/5 group-hover:to-[#F28C28]/5 transition-all duration-500"></div>
+            
+            <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+              🎥
+            </div>
 
-
-          {/* CARD 1 */}
-
-          <div className="resource-card">
-
-            <div className="resource-thumb">🎥</div>
-
-            <h3 className="resource-title">
+            <h3 className="relative font-bold text-xl mb-2 text-[#1F1F1F] group-hover:text-[#3B71E8] transition-colors duration-300">
               Video Lessons
             </h3>
 
-            <p className="resource-text">
+            <p className="relative text-gray-500 text-sm leading-relaxed mb-4">
               Interactive learning videos designed to help
               students understand complex subjects.
             </p>
 
-            <a href="/videos" className="resource-btn">
-Watch Lessons →
-</a>
+            <a 
+              href="/videos" 
+              className="relative inline-flex items-center text-sm font-semibold text-[#3B71E8] group-hover:text-[#F28C28] transition-colors duration-300"
+            >
+              Watch Lessons 
+              <span className="ml-1 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </a>
 
+            <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-[#3B71E8]/10 to-transparent rounded-tr-2xl"></div>
           </div>
 
+          {/* CARD 2 - Lesson Plans */}
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#F28C28]/30 hover:shadow-2xl hover:shadow-[#F28C28]/10 transition-all duration-500">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#F28C28]/0 to-[#3B71E8]/0 group-hover:from-[#F28C28]/5 group-hover:to-[#3B71E8]/5 transition-all duration-500"></div>
+            
+            <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#F28C28] to-[#3B71E8] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+              📚
+            </div>
 
-          {/* CARD 2 */}
-
-          <div className="resource-card">
-
-            <div className="resource-thumb">📚</div>
-
-            <h3 className="resource-title">
+            <h3 className="relative font-bold text-xl mb-2 text-[#1F1F1F] group-hover:text-[#F28C28] transition-colors duration-300">
               Lesson Plans
             </h3>
 
-            <p className="resource-text">
+            <p className="relative text-gray-500 text-sm leading-relaxed mb-4">
               Structured lesson plans prepared for teachers
               across multiple subjects and grade levels.
             </p>
 
-            <a href="/material" className="resource-btn">
-View Resources →
-</a>
+            <a 
+              href="/material" 
+              className="relative inline-flex items-center text-sm font-semibold text-[#F28C28] group-hover:text-[#3B71E8] transition-colors duration-300"
+            >
+              View Resources 
+              <span className="ml-1 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </a>
 
+            <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-[#F28C28]/10 to-transparent rounded-tr-2xl"></div>
           </div>
 
+          {/* CARD 3 - Scheme of Work */}
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#3B71E8]/30 hover:shadow-2xl hover:shadow-[#3B71E8]/10 transition-all duration-500">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3B71E8]/0 to-[#F28C28]/0 group-hover:from-[#3B71E8]/5 group-hover:to-[#F28C28]/5 transition-all duration-500"></div>
+            
+            <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+              📝
+            </div>
 
-          {/* CARD 3 */}
-
-          <div className="resource-card">
-
-            <div className="resource-thumb">📝</div>
-
-            <h3 className="resource-title">
+            <h3 className="relative font-bold text-xl mb-2 text-[#1F1F1F] group-hover:text-[#3B71E8] transition-colors duration-300">
               Scheme of Work
             </h3>
 
-            <p className="resource-text">
+            <p className="relative text-gray-500 text-sm leading-relaxed mb-4">
               Organized academic schemes that guide
               teaching progression throughout the term.
             </p>
 
-            <a href="/material" className="resource-btn">
-Explore →
-</a>
+            <a 
+              href="/material" 
+              className="relative inline-flex items-center text-sm font-semibold text-[#3B71E8] group-hover:text-[#F28C28] transition-colors duration-300"
+            >
+              Explore 
+              <span className="ml-1 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </a>
 
+            <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-[#3B71E8]/10 to-transparent rounded-tr-2xl"></div>
           </div>
 
+          {/* CARD 4 - Teaching Materials */}
+          <div className="group relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 hover:border-[#F28C28]/30 hover:shadow-2xl hover:shadow-[#F28C28]/10 transition-all duration-500">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#F28C28]/0 to-[#3B71E8]/0 group-hover:from-[#F28C28]/5 group-hover:to-[#3B71E8]/5 transition-all duration-500"></div>
+            
+            <div className="relative text-4xl mb-4 bg-gradient-to-br from-[#F28C28] to-[#3B71E8] w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+              💬
+            </div>
 
-          {/* CARD 4 */}
-
-          <div className="resource-card">
-
-            <div className="resource-thumb">💬</div>
-
-            <h3 className="resource-title">
+            <h3 className="relative font-bold text-xl mb-2 text-[#1F1F1F] group-hover:text-[#F28C28] transition-colors duration-300">
               Teaching Materials
             </h3>
 
-            <p className="resource-text">
+            <p className="relative text-gray-500 text-sm leading-relaxed mb-4">
               Premium educational materials available
               for schools and teachers to purchase.
             </p>
 
-             <a href="/material" className="resource-btn">
-View Resources →
-</a>
+            <a 
+              href="/material" 
+              className="relative inline-flex items-center text-sm font-semibold text-[#F28C28] group-hover:text-[#3B71E8] transition-colors duration-300"
+            >
+              View Resources 
+              <span className="ml-1 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </a>
 
+            <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-[#F28C28]/10 to-transparent rounded-tr-2xl"></div>
           </div>
 
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <button className="group relative px-8 py-3 rounded-lg bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] hover:from-[#3B71E8] hover:to-[#F28C28] text-white font-bold text-base transition-all duration-500 shadow-lg shadow-[#3B71E8]/25 hover:shadow-xl hover:shadow-[#F28C28]/25 transform hover:-translate-y-0.5 overflow-hidden">
+            <span className="relative z-10">Browse All Resources</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#F28C28] to-[#3B71E8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+          </button>
         </div>
 
       </div>
