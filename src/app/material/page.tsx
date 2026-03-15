@@ -15,7 +15,7 @@ const materials = [
     pages: "85",
     features: ["Weekly lesson breakdown", "Practice exercises", "Teacher guide", "Assessment tools"],
     icon: "📐",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-[#3B71E8] to-[#F28C28]"
   },
   {
     title: "Junior Secondary Scheme of Work",
@@ -27,7 +27,7 @@ const materials = [
     pages: "120",
     features: ["Termly breakdown", "Curriculum alignment", "Learning objectives", "Resource lists"],
     icon: "📚",
-    color: "from-green-500 to-emerald-500"
+    color: "from-[#F28C28] to-[#3B71E8]"
   },
   {
     title: "Primary School Curriculum Guide",
@@ -39,7 +39,7 @@ const materials = [
     pages: "95",
     features: ["Subject breakdown", "Learning outcomes", "Teaching strategies", "Assessment guide"],
     icon: "📖",
-    color: "from-purple-500 to-pink-500"
+    color: "from-[#3B71E8] to-[#F28C28]"
   },
   {
     title: "English Language Lesson Notes",
@@ -51,7 +51,7 @@ const materials = [
     pages: "110",
     features: ["Grammar exercises", "Comprehension passages", "Essay topics", "Answer keys"],
     icon: "✍️",
-    color: "from-orange-500 to-red-500"
+    color: "from-[#F28C28] to-[#3B71E8]"
   },
   {
     title: "Science Practical Handbook",
@@ -63,7 +63,7 @@ const materials = [
     pages: "75",
     features: ["Experiment guides", "Safety protocols", "Equipment lists", "Observation sheets"],
     icon: "🔬",
-    color: "from-teal-500 to-green-500"
+    color: "from-[#3B71E8] to-[#F28C28]"
   },
   {
     title: "Examination Question Bank",
@@ -75,7 +75,7 @@ const materials = [
     pages: "200+",
     features: ["Objective questions", "Theory questions", "Marking schemes", "Termly exams"],
     icon: "📝",
-    color: "from-indigo-500 to-purple-500"
+    color: "from-[#F28C28] to-[#3B71E8]"
   }
 ];
 
@@ -90,25 +90,33 @@ export default function Materials() {
     : materials.filter(m => m.category === activeCategory);
 
   return (
-    <section className="relative bg-[#0a0e1a] text-white py-24 overflow-hidden">
-      {/* Premium Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.1),transparent_50%)]" />
-      
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }} />
+    <section className="relative bg-gradient-to-br from-white via-white to-blue-50/30 py-24 overflow-hidden -mt-px">
+
+      {/* Premium animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Gradient orbs */}
+        <div className="absolute top-40 left-1/3 w-[600px] h-[600px] bg-gradient-to-r from-[#3B71E8]/5 to-transparent rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-l from-[#F28C28]/5 to-transparent rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#3B71E8]/3 via-transparent to-[#F28C28]/3 rounded-full blur-[150px]"></div>
+        
+        {/* Subtle grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h60v60H0z" fill="none"/%3E%3Cpath d="M0 0h60M0 60h60M0 0v60M60 0v60" stroke="%233B71E8" stroke-width="0.5" stroke-opacity="0.03"/%3E%3C/svg%3E')`,
+            backgroundRepeat: 'repeat'
+          }}
+        ></div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-green-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+      {/* Floating icons with brand gradient */}
+      <div className="floating-icon text-4xl top-20 left-20 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📚</div>
+      <div className="floating-icon text-3xl bottom-20 right-32 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">📐</div>
+      <div className="floating-icon text-3xl top-1/3 left-10 bg-gradient-to-br from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">🔬</div>
+      <div className="floating-icon text-3xl bottom-16 right-10 bg-gradient-to-tl from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent opacity-20">✍️</div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -116,39 +124,33 @@ export default function Materials() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-green-400 font-mono text-sm tracking-widest mb-4 block">
-            TEACHING RESOURCES
-          </span>
-
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Educational Materials
-            </span>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            <span className="text-[#1F1F1F]">Educational Materials</span>
             <br />
-            <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3B71E8] via-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
               For Teachers & Schools
             </span>
           </h1>
 
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
             Access premium lesson plans, schemes of work and teaching
             materials designed to support modern classrooms.
           </p>
 
           {/* Stats Bar */}
-          <div className="flex items-center justify-center gap-8 mt-8">
+          <div className="flex items-center justify-center gap-8 mt-8 p-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 max-w-md mx-auto">
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">50+</div>
+              <div className="text-2xl font-extrabold text-[#1F1F1F]">50+</div>
               <div className="text-xs text-gray-500">Materials</div>
             </div>
-            <div className="w-px h-8 bg-white/10" />
+            <div className="w-px h-8 bg-gray-200" />
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">1.2k+</div>
+              <div className="text-2xl font-extrabold text-[#1F1F1F]">1.2k+</div>
               <div className="text-xs text-gray-500">Downloads</div>
             </div>
-            <div className="w-px h-8 bg-white/10" />
+            <div className="w-px h-8 bg-gray-200" />
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">4.8</div>
+              <div className="text-2xl font-extrabold text-[#1F1F1F]">4.8</div>
               <div className="text-xs text-gray-500">Rating</div>
             </div>
           </div>
@@ -159,7 +161,7 @@ export default function Materials() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap items-center justify-between gap-4 mb-12 p-4 bg-white/[0.02] rounded-2xl border border-white/[0.05]"
+          className="flex flex-wrap items-center justify-between gap-4 mb-12 p-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50"
         >
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
@@ -168,8 +170,8 @@ export default function Materials() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                   activeCategory === category
-                    ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/25"
-                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                    ? "bg-gradient-to-r from-[#3B71E8] to-[#F28C28] text-white shadow-lg shadow-[#3B71E8]/25"
+                    : "text-gray-500 hover:text-[#3B71E8] hover:bg-white/50"
                 }`}
               >
                 {category}
@@ -180,7 +182,7 @@ export default function Materials() {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-gray-300 focus:outline-none focus:border-green-500/50"
+            className="bg-white/70 border border-gray-200/50 rounded-xl px-4 py-2 text-sm text-[#1F1F1F] focus:outline-none focus:border-[#3B71E8]/30"
           >
             <option value="popular">Most Popular</option>
             <option value="price-low">Price: Low to High</option>
@@ -202,27 +204,27 @@ export default function Materials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-20 p-8 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-3xl border border-green-500/20 backdrop-blur-sm"
+          className="mt-20 p-8 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 rounded-3xl border border-[#3B71E8]/20 backdrop-blur-sm"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28] flex items-center justify-center">
                 <span className="text-2xl">🎁</span>
               </div>
               <div>
-                <h3 className="text-xl font-semibold">Get the Complete Bundle</h3>
-                <p className="text-gray-400">All materials at 30% discount</p>
+                <h3 className="text-xl font-bold text-[#1F1F1F]">Get the Complete Bundle</h3>
+                <p className="text-gray-500">All materials at 30% discount</p>
               </div>
             </div>
             <div className="flex items-center gap-6">
               <div className="text-right">
                 <span className="text-sm text-gray-400 line-through">₦41,000</span>
-                <div className="text-2xl font-bold text-green-400">₦28,700</div>
+                <div className="text-2xl font-extrabold text-[#3B71E8]">₦28,700</div>
               </div>
               <a
-                href="https://wa.me/234XXXXXXXXXX?text=Hello%20I%20want%20to%20purchase%20the%20complete%20bundle"
+                href="https://wa.me/+2349023419897?text=Hello%20I%20want%20to%20purchase%20the%20complete%20bundle"
                 target="_blank"
-                className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl font-medium hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300"
+                className="px-6 py-3 bg-gradient-to-r from-[#3B71E8] to-[#F28C28] text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-[#3B71E8]/25 transition-all duration-300"
               >
                 Get Bundle →
               </a>
@@ -252,11 +254,11 @@ const MaterialCard = ({ material, index }: any) => {
       onHoverEnd={() => setIsHovered(false)}
       className="group"
     >
-      <div className="relative bg-gradient-to-br from-white/[0.07] to-white/[0.02] rounded-2xl p-6 border border-white/[0.05] hover:border-green-500/30 transition-all duration-500 overflow-hidden h-full flex flex-col">
+      <div className="relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 hover:border-[#3B71E8]/30 transition-all duration-500 overflow-hidden h-full flex flex-col">
         
         {/* Animated Background */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5"
+          className="absolute inset-0 bg-gradient-to-r from-[#3B71E8]/5 to-[#F28C28]/5"
           animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3 }}
         />
@@ -272,28 +274,28 @@ const MaterialCard = ({ material, index }: any) => {
                 {material.icon}
               </div>
               <div>
-                <span className="text-xs font-mono text-green-500/60 block">
+                <span className="text-xs font-mono text-[#3B71E8]/60 block">
                   {material.category}
                 </span>
-                <h3 className="text-lg font-semibold leading-tight">
+                <h3 className="text-lg font-bold text-[#1F1F1F] leading-tight">
                   {material.title}
                 </h3>
               </div>
             </div>
             
             {/* Badge */}
-            <div className="px-2 py-1 bg-white/5 rounded-lg text-xs font-mono text-gray-400 border border-white/10">
+            <div className="px-2 py-1 bg-gray-100 rounded-lg text-xs font-mono text-gray-500 border border-gray-200">
               {material.level}
             </div>
           </div>
 
           {/* Description */}
-          <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
+          <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
             {material.description}
           </p>
 
           {/* Metadata */}
-          <div className="flex items-center gap-4 mb-4 text-xs text-gray-500">
+          <div className="flex items-center gap-4 mb-4 text-xs text-gray-400">
             <span className="flex items-center gap-1">
               <span>📄</span> {material.format}
             </span>
@@ -307,10 +309,10 @@ const MaterialCard = ({ material, index }: any) => {
             {material.features.map((feature: any, idx: number) => (
               <div
                 key={idx}
-                className="flex items-center gap-1.5 text-xs text-gray-300"
+                className="flex items-center gap-1.5 text-xs text-gray-500"
               >
-                <span className="flex-shrink-0 w-4 h-4 rounded-full bg-green-500/10 flex items-center justify-center">
-                  <span className="text-green-400 text-[10px]">✓</span>
+                <span className="flex-shrink-0 w-4 h-4 rounded-full bg-[#3B71E8]/10 flex items-center justify-center">
+                  <span className="text-[#3B71E8] text-[10px]">✓</span>
                 </span>
                 <span className="truncate">{feature}</span>
               </div>
@@ -318,22 +320,25 @@ const MaterialCard = ({ material, index }: any) => {
           </div>
 
           {/* Price and CTA */}
-          <div className="mt-auto pt-4 border-t border-white/[0.05] flex items-center justify-between">
+          <div className="mt-auto pt-4 border-t border-gray-200/50 flex items-center justify-between">
             <div>
-              <span className="text-xs text-gray-500 block">Price</span>
-              <span className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="text-xs text-gray-400 block">Price</span>
+              <span className="text-2xl font-extrabold bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
                 ₦{material.price}
               </span>
             </div>
             <a
               href={`https://wa.me/+2349023419897?text=Hello%20I%20want%20to%20purchase%20the%20${encodeURIComponent(material.title)}`}
               target="_blank"
-              className="px-4 py-2 bg-green-500/10 rounded-xl text-sm font-medium text-green-400 hover:bg-green-500/20 transition-colors border border-green-500/20"
+              className="px-4 py-2 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 rounded-xl text-sm font-semibold text-[#3B71E8] hover:from-[#3B71E8]/20 hover:to-[#F28C28]/20 transition-all duration-300 border border-[#3B71E8]/20"
             >
               Purchase →
             </a>
           </div>
         </div>
+
+        {/* Corner accent */}
+        <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-[#3B71E8]/10 to-transparent rounded-tr-2xl"></div>
       </div>
     </motion.div>
   );
