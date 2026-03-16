@@ -52,15 +52,15 @@ export default function Navbar() {
 
       <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-6 py-3">
 
-        {/* Logo - Image instead of text */}
+        {/* Logo - Larger Image */}
         <Link href="/" className="relative group flex items-center">
-          <div className="relative h-10 w-auto">
+          <div className="relative h-14 w-auto"> {/* Increased from h-10 to h-14 */}
             <Image
               src="/logo.png"
               alt="Lerna Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto object-contain"
+              width={160}  // Increased from 120 to 160
+              height={56}  // Increased from 40 to 56
+              className="h-14 w-auto object-contain" // Increased from h-10 to h-14
               priority
             />
             {/* Optional subtle hover effect */}
