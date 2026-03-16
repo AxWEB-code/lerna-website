@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image"; // Add this import
+import Link from "next/link"; // Add this import
 import { FaTwitter, FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
@@ -42,13 +44,23 @@ export default function Footer() {
         {/* Main Footer - Balanced 3 columns */}
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12 py-16">
           
-          {/* Brand - Left */}
+          {/* Brand - Left with Logo Image */}
           <div>
             <div className="mb-4">
-              <h3 className="text-2xl font-bold text-[#1F1F1F]">
-                <span className="bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">L</span>
-                <span className="text-[#1F1F1F]">erna</span>
-              </h3>
+              <Link href="/" className="inline-block group">
+                <div className="relative h-16 w-auto"> {/* Logo container */}
+                  <Image
+                    src="/logo.png"
+                    alt="Lerna Logo"
+                    width={180}
+                    height={64}
+                    className="h-16 w-auto object-contain"
+                    priority
+                  />
+                  {/* Subtle hover effect */}
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#3B71E8] to-[#F28C28] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </div>
+              </Link>
             </div>
             
             <p className="text-sm leading-relaxed text-gray-500 mb-6 max-w-sm">
