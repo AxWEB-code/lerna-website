@@ -50,17 +50,17 @@ export default function Navbar() {
         : "backdrop-blur-sm bg-white/80 border-b border-gray-200/50 shadow-sm"
     }`}>
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-6 py-2"> {/* Reduced padding */}
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-6 py-3">
 
-        {/* Logo - Much Larger */}
+        {/* Logo - Image instead of text */}
         <Link href="/" className="relative group flex items-center">
-          <div className="relative h-20 w-auto"> {/* Increased from h-14 to h-20 */}
+          <div className="relative h-10 w-auto">
             <Image
               src="/logo.png"
               alt="Lerna Logo"
-              width={220}  // Increased from 160 to 220
-              height={80}  // Increased from 56 to 80
-              className="h-20 w-auto object-contain" // Increased from h-14 to h-20
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
               priority
             />
             {/* Optional subtle hover effect */}
@@ -74,7 +74,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className={`relative px-4 py-2 text-base font-medium transition-all duration-300 group ${
+              className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 group ${
                 active === link.href
                   ? "text-[#3B71E8]" 
                   : "text-gray-600 hover:text-[#3B71E8]"
@@ -93,7 +93,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
 
           {/* Login with subtle hover effect */}
-          <button className="relative px-4 py-2 text-gray-600 hover:text-[#3B71E8] text-base font-medium transition-all duration-300 group overflow-hidden">
+          <button className="relative px-4 py-2 text-gray-600 hover:text-[#3B71E8] text-sm font-medium transition-all duration-300 group overflow-hidden">
             <span className="relative z-10">Login</span>
             <span className="absolute inset-0 bg-gradient-to-r from-[#3B71E8]/0 to-[#F28C28]/0 group-hover:from-[#3B71E8]/5 group-hover:to-[#F28C28]/5 transition-all duration-300"></span>
           </button>
@@ -101,7 +101,7 @@ export default function Navbar() {
           {/* Premium Contact button with gradient border and hover effect */}
           <Link
             href="/contact"
-            className="group relative px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] hover:from-[#3B71E8] hover:to-[#F28C28] text-white text-base font-semibold transition-all duration-500 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 overflow-hidden"
+            className="group relative px-5 py-2 rounded-lg bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] hover:from-[#3B71E8] hover:to-[#F28C28] text-white text-sm font-semibold transition-all duration-500 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 overflow-hidden"
           >
             <span className="relative z-10">Contact Us</span>
             <div className="absolute inset-0 bg-gradient-to-r from-[#F28C28] to-[#3B71E8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -136,7 +136,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`relative px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
+                className={`relative px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                   active === link.href
                     ? "text-[#3B71E8] bg-blue-50/50"
                     : "text-gray-600 hover:text-[#3B71E8] hover:bg-gray-50"
@@ -153,7 +153,7 @@ export default function Navbar() {
           {/* Mobile Buttons - Premium */}
           <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
             
-            <button className="group relative px-4 py-3 rounded-lg text-gray-600 hover:text-[#3B71E8] text-base font-medium transition-all duration-300 text-left overflow-hidden">
+            <button className="group relative px-4 py-3 rounded-lg text-gray-600 hover:text-[#3B71E8] text-sm font-medium transition-all duration-300 text-left overflow-hidden">
               <span className="relative z-10">Login</span>
               <span className="absolute inset-0 bg-gradient-to-r from-[#3B71E8]/0 to-[#F28C28]/0 group-hover:from-[#3B71E8]/5 group-hover:to-[#F28C28]/5 transition-all duration-300"></span>
             </button>
@@ -161,7 +161,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="group relative px-5 py-3 rounded-lg bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] hover:from-[#3B71E8] hover:to-[#F28C28] text-white font-semibold text-base text-center transition-all duration-500 shadow-md hover:shadow-lg overflow-hidden"
+              className="group relative px-5 py-3 rounded-lg bg-gradient-to-r from-[#3B71E8] to-[#3B71E8] hover:from-[#3B71E8] hover:to-[#F28C28] text-white font-semibold text-sm text-center transition-all duration-500 shadow-md hover:shadow-lg overflow-hidden"
             >
               <span className="relative z-10">Contact Us</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#F28C28] to-[#3B71E8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
