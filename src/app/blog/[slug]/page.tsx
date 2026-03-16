@@ -9,11 +9,11 @@ export default function ArticlePage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   return (
-    <article className="min-h-screen bg-[#0a0e1a] text-white">
+    <article className="min-h-screen bg-gradient-to-br from-white via-white to-blue-50/30 text-[#1F1F1F]">
       {/* Progress bar */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-white/[0.05] z-50">
+      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-50">
         <motion.div 
-          className="h-full bg-green-500"
+          className="h-full bg-gradient-to-r from-[#3B71E8] to-[#F28C28]"
           style={{ scaleX: 0, transformOrigin: "0%" }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.5 }}
@@ -26,7 +26,7 @@ export default function ArticlePage() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-green-500/10 border border-green-500/30 rounded-xl flex items-center justify-center text-green-400 hover:bg-green-500/20 transition-colors z-50 backdrop-blur-sm"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 border border-[#3B71E8]/30 rounded-xl flex items-center justify-center text-[#3B71E8] hover:from-[#3B71E8]/20 hover:to-[#F28C28]/20 transition-colors z-50 backdrop-blur-sm"
       >
         ↑
       </motion.button>
@@ -41,16 +41,16 @@ export default function ArticlePage() {
         >
           {/* Category with decoration */}
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-green-400 text-sm font-mono tracking-widest">
+            <span className="bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent text-sm font-mono tracking-widest font-semibold">
               FUTURE OF EDUCATION
             </span>
-            <div className="h-px w-12 bg-green-500/30" />
+            <div className="h-px w-12 bg-gradient-to-r from-[#3B71E8] to-[#F28C28]" />
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-            The Future of Learning:{' '}
-            <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">
+            <span className="text-[#1F1F1F]">The Future of Learning:</span>{' '}
+            <span className="bg-gradient-to-r from-[#3B71E8] via-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">
               How AI is Reshaping Education in Africa
             </span>
           </h1>
@@ -59,41 +59,45 @@ export default function ArticlePage() {
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               {/* Author avatar placeholder */}
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center text-white font-bold">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#3B71E8] to-[#F28C28] flex items-center justify-center text-white font-bold">
                 CO
               </div>
               <div>
-                <p className="font-medium">Mrs Chiwendu Okechuckwu</p>
+                <p className="font-bold text-[#1F1F1F]">Mrs Chiwendu Okechuckwu</p>
                 <p className="text-sm text-gray-500">Education Researcher & Consultant</p>
               </div>
             </div>
             
             <div className="flex items-center gap-4 text-sm text-gray-400">
               <span className="flex items-center gap-1">📅 Mar 22, 2026</span>
-              <span className="w-1 h-1 rounded-full bg-gray-600" />
+              <span className="w-1 h-1 rounded-full bg-gray-300" />
               <span className="flex items-center gap-1">⏱️ 8 min read</span>
             </div>
           </div>
 
           {/* Engagement bar */}
-          <div className="flex items-center gap-4 mt-8 pt-6 border-t border-white/[0.05]">
+          <div className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-200">
             <button 
               onClick={() => setIsLiked(!isLiked)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                isLiked ? 'bg-red-500/10 text-red-400' : 'bg-white/[0.05] text-gray-400 hover:text-white'
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                isLiked 
+                  ? 'bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 text-[#F28C28] border border-[#F28C28]/30' 
+                  : 'bg-white/70 text-gray-500 hover:text-[#3B71E8] border border-gray-200/50'
               }`}
             >
               <span>{isLiked ? '❤️' : '🤍'}</span>
-              <span className="text-sm">124</span>
+              <span className="text-sm font-medium">124</span>
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-white/[0.05] rounded-lg text-gray-400 hover:text-white transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 bg-white/70 rounded-lg text-gray-500 hover:text-[#3B71E8] transition-colors border border-gray-200/50">
               <span>💬</span>
-              <span className="text-sm">23</span>
+              <span className="text-sm font-medium">23</span>
             </button>
             <button 
               onClick={() => setIsBookmarked(!isBookmarked)}
-              className={`ml-auto px-4 py-2 rounded-lg transition-colors ${
-                isBookmarked ? 'bg-green-500/10 text-green-400' : 'bg-white/[0.05] text-gray-400 hover:text-white'
+              className={`ml-auto px-4 py-2 rounded-lg transition-all duration-300 ${
+                isBookmarked 
+                  ? 'bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 text-[#3B71E8] border border-[#3B71E8]/30 font-medium'
+                  : 'bg-white/70 text-gray-500 hover:text-[#3B71E8] border border-gray-200/50'
               }`}
             >
               {isBookmarked ? '🔖 Bookmarked' : '🔖 Save'}
@@ -108,8 +112,8 @@ export default function ArticlePage() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-12"
         >
-          <div className="aspect-video rounded-xl bg-gradient-to-br from-green-500/20 via-transparent to-blue-500/20 border border-white/[0.05] flex items-center justify-center relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="aspect-video rounded-xl bg-gradient-to-br from-[#3B71E8]/20 via-transparent to-[#F28C28]/20 border border-gray-200/50 flex items-center justify-center relative overflow-hidden group bg-white/70 backdrop-blur-sm">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <span className="text-8xl opacity-30 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">📚</span>
           </div>
           <figcaption className="text-sm text-gray-500 mt-3 text-center">
@@ -122,10 +126,10 @@ export default function ArticlePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="space-y-6 text-gray-300 leading-relaxed text-lg"
+          className="space-y-6 text-gray-600 leading-relaxed text-lg"
         >
           {/* Introduction with dropcap */}
-          <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-green-400 first-letter:mr-3 first-letter:float-left">
+          <p className="first-letter:text-5xl first-letter:font-extrabold first-letter:bg-gradient-to-r first-letter:from-[#3B71E8] first-letter:to-[#F28C28] first-letter:bg-clip-text first-letter:text-transparent first-letter:mr-3 first-letter:float-left">
             Artificial intelligence is rapidly transforming the education
             landscape across Africa. From personalized learning tools to
             automated administrative systems, technology is enabling schools
@@ -140,15 +144,15 @@ export default function ArticlePage() {
           </p>
 
           {/* Pull quote for emphasis */}
-          <aside className="my-10 p-6 bg-green-500/5 border-l-4 border-green-500 rounded-r-xl">
-            <p className="text-xl italic text-white">
+          <aside className="my-10 p-6 bg-gradient-to-r from-[#3B71E8]/5 to-[#F28C28]/5 border-l-4 border-[#3B71E8] rounded-r-xl">
+            <p className="text-xl italic text-[#1F1F1F] font-medium">
               "Technology isn't replacing teachers — it's empowering them to focus on what matters most: teaching."
             </p>
             <p className="text-sm text-gray-500 mt-2">— Mrs Chiwendu Okechuckwu</p>
           </aside>
 
-          <h2 className="text-2xl font-semibold text-white mt-12 mb-4 flex items-center gap-3">
-            <span className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 text-sm">01</span>
+          <h2 className="text-2xl font-bold text-[#1F1F1F] mt-12 mb-4 flex items-center gap-3">
+            <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 flex items-center justify-center text-[#3B71E8] text-sm font-bold">01</span>
             Technology as an Educational Equalizer
           </h2>
 
@@ -165,8 +169,8 @@ export default function ArticlePage() {
               { label: 'Improved grades', value: '67%' },
               { label: 'Teacher satisfaction', value: '89%' }
             ].map((stat, i) => (
-              <div key={i} className="text-center p-4 bg-white/[0.02] rounded-xl border border-white/[0.05]">
-                <div className="text-2xl font-bold text-green-400">{stat.value}</div>
+              <div key={i} className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-gray-200/50">
+                <div className="text-2xl font-extrabold bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">{stat.value}</div>
                 <div className="text-xs text-gray-500">{stat.label}</div>
               </div>
             ))}
@@ -178,8 +182,8 @@ export default function ArticlePage() {
             between parents and teachers.
           </p>
 
-          <h2 className="text-2xl font-semibold text-white mt-12 mb-4 flex items-center gap-3">
-            <span className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 text-sm">02</span>
+          <h2 className="text-2xl font-bold text-[#1F1F1F] mt-12 mb-4 flex items-center gap-3">
+            <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-[#3B71E8]/10 to-[#F28C28]/10 flex items-center justify-center text-[#F28C28] text-sm font-bold">02</span>
             Preparing Students for the Future
           </h2>
 
@@ -190,22 +194,22 @@ export default function ArticlePage() {
           </p>
 
           {/* Key takeaways */}
-          <div className="my-10 p-6 bg-white/[0.02] rounded-xl border border-white/[0.05]">
-            <h3 className="font-semibold mb-4 flex items-center gap-2">
-              <span className="text-green-400">✨</span>
+          <div className="my-10 p-6 bg-white/70 backdrop-blur-sm rounded-xl border border-gray-200/50">
+            <h3 className="font-bold text-[#1F1F1F] mb-4 flex items-center gap-2">
+              <span className="bg-gradient-to-r from-[#3B71E8] to-[#F28C28] bg-clip-text text-transparent">✨</span>
               Key Takeaways
             </h3>
-            <ul className="space-y-3 text-gray-400">
+            <ul className="space-y-3 text-gray-500">
               <li className="flex items-start gap-2">
-                <span className="text-green-400 mt-1">•</span>
+                <span className="text-[#3B71E8] mt-1">•</span>
                 <span>AI tools can reduce administrative workload by up to 40%</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-green-400 mt-1">•</span>
+                <span className="text-[#F28C28] mt-1">•</span>
                 <span>Students with access to digital resources show 30% better engagement</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-green-400 mt-1">•</span>
+                <span className="text-[#3B71E8] mt-1">•</span>
                 <span>Schools need sustainable implementation strategies</span>
               </li>
             </ul>
@@ -220,7 +224,7 @@ export default function ArticlePage() {
           className="flex flex-wrap gap-2 mt-12"
         >
           {['AI in Education', 'EdTech', 'Africa', 'Future of Learning', 'Digital Transformation'].map((tag, i) => (
-            <span key={i} className="px-3 py-1 bg-white/[0.05] rounded-full text-xs text-gray-400">
+            <span key={i} className="px-3 py-1 bg-white/70 backdrop-blur-sm rounded-full text-xs text-gray-500 border border-gray-200/50">
               #{tag}
             </span>
           ))}
@@ -231,19 +235,19 @@ export default function ArticlePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-16 pt-8 border-t border-white/[0.05]"
+          className="mt-16 pt-8 border-t border-gray-200"
         >
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="text-sm text-gray-500">Written by</p>
-              <p className="font-medium">Mrs Chiwendu Okechuckwu</p>
+              <p className="font-bold text-[#1F1F1F]">Mrs Chiwendu Okechuckwu</p>
               <p className="text-sm text-gray-500 mt-1">Education Researcher & Consultant</p>
             </div>
             
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-500 mr-2">Share:</span>
               {['𝕏', '💼', '🔗'].map((icon, i) => (
-                <button key={i} className="w-8 h-8 bg-white/[0.05] rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center text-gray-400">
+                <button key={i} className="w-8 h-8 bg-white/70 border border-gray-200/50 rounded-lg hover:border-[#3B71E8]/30 transition-colors flex items-center justify-center text-gray-500 hover:text-[#3B71E8]">
                   {icon}
                 </button>
               ))}
@@ -258,15 +262,17 @@ export default function ArticlePage() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-16"
         >
-          <h3 className="text-lg font-semibold mb-6">Related articles</h3>
+          <h3 className="text-lg font-bold text-[#1F1F1F] mb-6">Related articles</h3>
           <div className="grid md:grid-cols-2 gap-4">
             {[
               { title: "Digital Literacy in Primary Schools", readTime: "5 min" },
               { title: "Teacher Training for AI Integration", readTime: "6 min" }
             ].map((item, i) => (
-              <a key={i} href="#" className="p-4 bg-white/[0.02] rounded-xl hover:bg-white/[0.04] transition-colors border border-white/[0.05]">
-                <h4 className="font-medium mb-2 group-hover:text-green-400">{item.title}</h4>
+              <a key={i} href="#" className="p-4 bg-white/70 backdrop-blur-sm rounded-xl hover:border-[#3B71E8]/30 transition-all duration-300 border border-gray-200/50 group">
+                <h4 className="font-bold text-[#1F1F1F] mb-2 group-hover:text-[#3B71E8]">{item.title}</h4>
                 <p className="text-xs text-gray-500">{item.readTime} read</p>
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-br from-[#3B71E8]/10 to-transparent rounded-tr-xl"></div>
               </a>
             ))}
           </div>
