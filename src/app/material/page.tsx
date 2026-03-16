@@ -18,30 +18,6 @@ const materials = [
     color: "from-[#3B71E8] to-[#F28C28]"
   },
   {
-    title: "Junior Secondary Scheme of Work",
-    description: "Structured scheme of work for JSS classes aligned with national curriculum standards.",
-    price: "8,000",
-    category: "Scheme of Work",
-    level: "JSS1-3",
-    format: "PDF + DOC",
-    pages: "120",
-    features: ["Termly breakdown", "Curriculum alignment", "Learning objectives", "Resource lists"],
-    icon: "📚",
-    color: "from-[#F28C28] to-[#3B71E8]"
-  },
-  {
-    title: "Primary School Curriculum Guide",
-    description: "Complete curriculum structure for primary school subjects and academic progression.",
-    price: "6,500",
-    category: "Curriculum Guide",
-    level: "Primary 1-6",
-    format: "PDF",
-    pages: "95",
-    features: ["Subject breakdown", "Learning outcomes", "Teaching strategies", "Assessment guide"],
-    icon: "📖",
-    color: "from-[#3B71E8] to-[#F28C28]"
-  },
-  {
     title: "English Language Lesson Notes",
     description: "Comprehensive lesson notes for JSS English with grammar, comprehension and composition.",
     price: "5,500",
@@ -79,7 +55,7 @@ const materials = [
   }
 ];
 
-const categories = ["All", "Lesson Plan", "Scheme of Work", "Curriculum Guide", "Handbook", "Question Bank"];
+const categories = ["All", "Lesson Plan", "Lesson Notes", "Handbook", "Question Bank"];
 
 export default function Materials() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -133,14 +109,14 @@ export default function Materials() {
           </h1>
 
           <p className="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
-            Access premium lesson plans, schemes of work and teaching
-            materials designed to support modern classrooms.
+            Access premium lesson plans, teaching materials and resources
+            designed to support modern classrooms.
           </p>
 
           {/* Stats Bar */}
           <div className="flex items-center justify-center gap-8 mt-8 p-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 max-w-md mx-auto">
             <div className="text-center">
-              <div className="text-2xl font-extrabold text-[#1F1F1F]">50+</div>
+              <div className="text-2xl font-extrabold text-[#1F1F1F]">35+</div>
               <div className="text-xs text-gray-500">Materials</div>
             </div>
             <div className="w-px h-8 bg-gray-200" />
@@ -218,8 +194,8 @@ export default function Materials() {
             </div>
             <div className="flex items-center gap-6">
               <div className="text-right">
-                <span className="text-sm text-gray-400 line-through">₦41,000</span>
-                <div className="text-2xl font-extrabold text-[#3B71E8]">₦28,700</div>
+                <span className="text-sm text-gray-400 line-through">₦26,500</span>
+                <div className="text-2xl font-extrabold text-[#3B71E8]">₦18,550</div>
               </div>
               <a
                 href="https://wa.me/+2349023419897?text=Hello%20I%20want%20to%20purchase%20the%20complete%20bundle"
